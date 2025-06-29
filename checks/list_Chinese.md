@@ -4,517 +4,551 @@
 
 # Clang-Tidy 检查项
 
-
-|英文检查项名称|- 中文翻译|是否提供修复建议（Yes 表示提供）
--|-|-
-abseil-cleanup-ctad|                                           
-abseil-duration-addition|                                           
-abseil-duration-comparison|                                           
-abseil-duration-conversion-cast|                                           
-abseil-duration-division|                                           
-abseil-duration-factory-float|                                           
-abseil-duration-factory-scale|                                           
-abseil-duration-subtraction|                                           
-abseil-duration-unnecessary-conversion|                                           
-abseil-faster-strsplit-delimiter|                                           
-abseil-no-internal-dependencies|                                           
-abseil-no-namespace|                                           
-abseil-redundant-strcat-calls|                                           
-abseil-str-cat-append|                                           
-abseil-string-find-startswith|                                           
-abseil-string-find-str-contains|                                           
-abseil-time-comparison|                                           
-abseil-time-subtraction|                                           
-abseil-upgrade-duration-conversions|                                           
-altera-id-dependent-backward-branch|                                           
-altera-kernel-name-restriction|                                           
-altera-single-work-item-barrier|                                           
-altera-struct-pack-align|                                           
-altera-unroll-loops|                                           
-android-cloexec-accept|                                           
-android-cloexec-accept4|                                           
-android-cloexec-creat|                                           
-android-cloexec-dup|                                           
-android-cloexec-epoll-create|                                           
-android-cloexec-epoll-create1|                                           
-android-cloexec-fopen|                                           
-android-cloexec-inotify-init|                                           
-android-cloexec-inotify-init1|                                           
-android-cloexec-memfd-create|                                           
-android-cloexec-open|                                           
-android-cloexec-pipe|                                           
-android-cloexec-pipe2|                                           
-android-cloexec-socket|                                           
-android-comparison-in-temp-failure-retry|                                           
-boost-use-to-string|                                           
-bugprone-argument-comment|                                           
-bugprone-assert-side-effect|                                           
-bugprone-assignment-in-if-condition|                                           
-bugprone-bad-signal-to-kill-thread|                                           
-bugprone-bool-pointer-implicit-conversion|                                           
-bugprone-branch-clone|                                           
-bugprone-copy-constructor-init|                                           
-bugprone-dangling-handle|                                           
-bugprone-dynamic-static-initializers|                                           
-bugprone-easily-swappable-parameters|                                           
-bugprone-empty-catch|                                           
-bugprone-exception-escape|                                           
-bugprone-fold-init-type|                                           
-bugprone-forward-declaration-namespace|                                           
-bugprone-forwarding-reference-overload|                                           
-bugprone-implicit-widening-of-multiplication-result|                                           
-bugprone-inaccurate-erase|                                           
-bugprone-incorrect-roundings|                                           
-bugprone-infinite-loop|                                           
-bugprone-integer-division|                                           
-bugprone-lambda-function-name|                                           
-bugprone-macro-parentheses|                                           
-bugprone-macro-repeated-side-effects|                                           
-bugprone-misplaced-operator-in-strlen-in-alloc|                                           
-bugprone-misplaced-pointer-arithmetic-in-alloc|                                           
-bugprone-misplaced-widening-cast|                                           
-bugprone-move-forwarding-reference|                                           
-bugprone-multiple-new-in-one-expression|                                           
-bugprone-multiple-statement-macro|                                           
-bugprone-narrowing-conversions|                                           
-bugprone-no-escape|                                           
-bugprone-non-zero-enum-to-bool-conversion|                                           
-bugprone-not-null-terminated-result|                                           
-bugprone-parent-virtual-call|                                           
-bugprone-posix-return|                                           
-bugprone-redundant-branch-condition|                                           
-bugprone-reserved-identifier|                                           
-bugprone-shared-ptr-array-mismatch|                                           
-bugprone-signal-handler|                                           
-bugprone-signed-char-misuse|                                           
-bugprone-sizeof-container|                                           
-bugprone-sizeof-expression|                                           
-bugprone-spuriously-wake-up-functions|                                           
-bugprone-standalone-empty|                                           
-bugprone-string-constructor|                                           
-bugprone-string-integer-assignment|                                           
-bugprone-string-literal-with-embedded-nul|                                           
-bugprone-stringview-nullptr|                                           
-bugprone-suspicious-enum-usage|                                           
-bugprone-suspicious-include|                                           
-bugprone-suspicious-memory-comparison|                                           
-bugprone-suspicious-memset-usage|                                           
-bugprone-suspicious-missing-comma|                                           
-bugprone-suspicious-realloc-usage|                                           
-bugprone-suspicious-semicolon|                                           
-bugprone-suspicious-string-compare|                                           
-bugprone-swapped-arguments|                                           
-bugprone-switch-missing-default-case|                                           
-bugprone-terminating-continue|                                           
-bugprone-throw-keyword-missing|                                           
-bugprone-too-small-loop-variable|                                           
-bugprone-unchecked-optional-access|                                           
-bugprone-undefined-memory-manipulation|                                           
-bugprone-undelegated-constructor|                                           
-bugprone-unhandled-exception-at-new|                                           
-bugprone-unhandled-self-assignment|                                           
-bugprone-unique-ptr-array-mismatch|                                           
-bugprone-unsafe-functions|                                           
-bugprone-unused-raii|                                           
-bugprone-unused-return-value|                                           
-bugprone-use-after-move|                                           
-bugprone-virtual-near-miss|                                           
-cert-con36-c|                                           
-cert-con54-cpp|                                           
-cert-dcl03-c|                                           
-cert-dcl16-c|                                           
-cert-dcl21-cpp|                                           
-cert-dcl37-c|                                           
-cert-dcl50-cpp|                                           
-cert-dcl51-cpp|                                           
-cert-dcl54-cpp|                                           
-cert-dcl58-cpp|                                           
-cert-dcl59-cpp|                                           
-cert-env33-c|                                           
-cert-err09-cpp|                                           
-cert-err33-c|                                           
-cert-err34-c|                                           
-cert-err52-cpp|                                           
-cert-err58-cpp|                                           
-cert-err60-cpp|                                           
-cert-err61-cpp|                                           
-cert-exp42-c|                                           
-cert-fio38-c|                                           
-cert-flp30-c|                                           
-cert-flp37-c|                                           
-cert-mem57-cpp|                                           
-cert-msc24-c|                                           
-cert-msc30-c|                                           
-cert-msc32-c|                                           
-cert-msc33-c|                                           
-cert-msc50-cpp|                                           
-cert-msc51-cpp|                                           
-cert-msc54-cpp|                                           
-cert-oop11-cpp|                                           
-cert-oop54-cpp|                                           
-cert-oop57-cpp|                                           
-cert-oop58-cpp|                                           
-cert-pos44-c|                                           
-cert-pos47-c|                                           
-cert-sig30-c|                                           
-cert-str34-c|                                           
-clang-analyzer-apiModeling.Errno|                                           
-clang-analyzer-apiModeling.TrustNonnull|                                           
-clang-analyzer-apiModeling.TrustReturnsNonnull|                                           
-clang-analyzer-apiModeling.google.GTest|                                           
-clang-analyzer-apiModeling.llvm.CastValue|                                           
-clang-analyzer-apiModeling.llvm.ReturnValue|                                           
-clang-analyzer-core.CallAndMessage|                                           
-clang-analyzer-core.CallAndMessageModeling|                                           
-clang-analyzer-core.DivideZero|                                           
-clang-analyzer-core.DynamicTypePropagation|                                           
-clang-analyzer-core.NonNullParamChecker|                                           
-clang-analyzer-core.NonnilStringConstants|                                           
-clang-analyzer-core.NullDereference|                                           
-clang-analyzer-core.StackAddrEscapeBase|                                           
-clang-analyzer-core.StackAddressEscape|                                           
-clang-analyzer-core.UndefinedBinaryOperatorResult|                                           
-clang-analyzer-core.VLASize|                                           
-clang-analyzer-core.builtin.BuiltinFunctions|                                           
-clang-analyzer-core.builtin.NoReturnFunctions|                                           
-clang-analyzer-core.uninitialized.ArraySubscript|                                           
-clang-analyzer-core.uninitialized.Assign|                                           
-clang-analyzer-core.uninitialized.Branch|                                           
-clang-analyzer-core.uninitialized.CapturedBlockVariable|                                           
-clang-analyzer-core.uninitialized.NewArraySize|                                           
-clang-analyzer-core.uninitialized.UndefReturn|                                           
-clang-analyzer-cplusplus.InnerPointer|                                           
-clang-analyzer-cplusplus.Move|                                           
-clang-analyzer-cplusplus.NewDelete|                                           
-clang-analyzer-cplusplus.NewDeleteLeaks|                                           
-clang-analyzer-cplusplus.PlacementNew|                                           
-clang-analyzer-cplusplus.PureVirtualCall|                                           
-clang-analyzer-cplusplus.SelfAssignment|                                           
-clang-analyzer-cplusplus.SmartPtrModeling|                                           
-clang-analyzer-cplusplus.StringChecker|                                           
-clang-analyzer-cplusplus.VirtualCallModeling|                                           
-clang-analyzer-deadcode.DeadStores|                                           
-clang-analyzer-fuchsia.HandleChecker|                                           
-clang-analyzer-nullability.NullPassedToNonnull|                                           
-clang-analyzer-nullability.NullReturnedFromNonnull|                                           
-clang-analyzer-nullability.NullabilityBase|                                           
-clang-analyzer-nullability.NullableDereferenced|                                           
-clang-analyzer-nullability.NullablePassedToNonnull|                                           
-clang-analyzer-nullability.NullableReturnedFromNonnull|                                           
-clang-analyzer-optin.cplusplus.UninitializedObject|                                           
-clang-analyzer-optin.cplusplus.VirtualCall|                                           
-clang-analyzer-optin.mpi.MPI-Checker|                                           
-clang-analyzer-optin.osx.OSObjectCStyleCast|                                           
-clang-analyzer-optin.osx.cocoa.localizability.EmptyLocalizationContextChecker|                                           
-clang-analyzer-optin.osx.cocoa.localizability.NonLocalizedStringChecker|                                           
-clang-analyzer-optin.performance.GCDAntipattern|                                           
-clang-analyzer-optin.performance.Padding|                                           
-clang-analyzer-optin.portability.UnixAPI|                                           
-clang-analyzer-osx.API|                                           
-clang-analyzer-osx.MIG|                                           
-clang-analyzer-osx.NSOrCFErrorDerefChecker|                                           
-clang-analyzer-osx.NumberObjectConversion|                                           
-clang-analyzer-osx.OSObjectRetainCount|                                           
-clang-analyzer-osx.ObjCProperty|                                           
-clang-analyzer-osx.SecKeychainAPI|                                           
-clang-analyzer-osx.cocoa.AtSync|                                           
-clang-analyzer-osx.cocoa.AutoreleaseWrite|                                           
-clang-analyzer-osx.cocoa.ClassRelease|                                           
-clang-analyzer-osx.cocoa.Dealloc|                                           
-clang-analyzer-osx.cocoa.IncompatibleMethodTypes|                                           
-clang-analyzer-osx.cocoa.Loops|                                           
-clang-analyzer-osx.cocoa.MissingSuperCall|                                           
-clang-analyzer-osx.cocoa.NSAutoreleasePool|                                           
-clang-analyzer-osx.cocoa.NSError|                                           
-clang-analyzer-osx.cocoa.NilArg|                                           
-clang-analyzer-osx.cocoa.NonNilReturnValue|                                           
-clang-analyzer-osx.cocoa.ObjCGenerics|                                           
-clang-analyzer-osx.cocoa.RetainCount|                                           
-clang-analyzer-osx.cocoa.RetainCountBase|                                           
-clang-analyzer-osx.cocoa.RunLoopAutoreleaseLeak|                                           
-clang-analyzer-osx.cocoa.SelfInit|                                           
-clang-analyzer-osx.cocoa.SuperDealloc|                                           
-clang-analyzer-osx.cocoa.UnusedIvars|                                           
-clang-analyzer-osx.cocoa.VariadicMethodTypes|                                           
-clang-analyzer-osx.coreFoundation.CFError|                                           
-clang-analyzer-osx.coreFoundation.CFNumber|                                           
-clang-analyzer-osx.coreFoundation.CFRetainRelease|                                           
-clang-analyzer-osx.coreFoundation.containers.OutOfBounds|                                           
-clang-analyzer-osx.coreFoundation.containers.PointerSizedValues|                                           
-clang-analyzer-security.FloatLoopCounter|                                           
-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling|                                           
-clang-analyzer-security.insecureAPI.SecuritySyntaxChecker|                                           
-clang-analyzer-security.insecureAPI.UncheckedReturn|                                           
-clang-analyzer-security.insecureAPI.bcmp|                                           
-clang-analyzer-security.insecureAPI.bcopy|                                           
-clang-analyzer-security.insecureAPI.bzero|                                           
-clang-analyzer-security.insecureAPI.decodeValueOfObjCType|                                           
-clang-analyzer-security.insecureAPI.getpw|                                           
-clang-analyzer-security.insecureAPI.gets|                                           
-clang-analyzer-security.insecureAPI.mkstemp|                                           
-clang-analyzer-security.insecureAPI.mktemp|                                           
-clang-analyzer-security.insecureAPI.rand|                                           
-clang-analyzer-security.insecureAPI.strcpy|                                           
-clang-analyzer-security.insecureAPI.vfork|                                           
-clang-analyzer-unix.API|                                           
-clang-analyzer-unix.DynamicMemoryModeling|                                           
-clang-analyzer-unix.Malloc|                                           
-clang-analyzer-unix.MallocSizeof|                                           
-clang-analyzer-unix.MismatchedDeallocator|                                           
-clang-analyzer-unix.Vfork|                                           
-clang-analyzer-unix.cstring.BadSizeArg|                                           
-clang-analyzer-unix.cstring.CStringModeling|                                           
-clang-analyzer-unix.cstring.NullArg|                                           
-clang-analyzer-valist.CopyToSelf|                                           
-clang-analyzer-valist.Uninitialized|                                           
-clang-analyzer-valist.Unterminated|                                           
-clang-analyzer-valist.ValistBase|                                           
-clang-analyzer-webkit.NoUncountedMemberChecker|                                           
-clang-analyzer-webkit.RefCntblBaseVirtualDtor|                                           
-clang-analyzer-webkit.UncountedLambdaCapturesChecker|                                           
-concurrency-mt-unsafe|                                           
-concurrency-thread-canceltype-asynchronous|                                           
-cppcoreguidelines-avoid-c-arrays|                                           
-cppcoreguidelines-avoid-capturing-lambda-coroutines|                                           
-cppcoreguidelines-avoid-const-or-ref-data-members|                                           
-cppcoreguidelines-avoid-do-while|                                           
-cppcoreguidelines-avoid-goto|                                           
-cppcoreguidelines-avoid-magic-numbers|                                           
-cppcoreguidelines-avoid-non-const-global-variables|                                           
-cppcoreguidelines-avoid-reference-coroutine-parameters|                                           
-cppcoreguidelines-c-copy-assignment-signature|                                           
-cppcoreguidelines-explicit-virtual-functions|                                           
-cppcoreguidelines-init-variables|                                           
-cppcoreguidelines-interfaces-global-init|                                           
-cppcoreguidelines-macro-usage|                                           
-cppcoreguidelines-misleading-capture-default-by-value|                                           
-cppcoreguidelines-missing-std-forward|                                           
-cppcoreguidelines-narrowing-conversions|                                           
-cppcoreguidelines-no-malloc|                                           
-cppcoreguidelines-noexcept-destructor|                                           
-cppcoreguidelines-noexcept-move-operations|                                           
-cppcoreguidelines-noexcept-swap|                                           
-cppcoreguidelines-non-private-member-variables-in-classes|                                           
-cppcoreguidelines-owning-memory|                                           
-cppcoreguidelines-prefer-member-initializer|                                           
-cppcoreguidelines-pro-bounds-array-to-pointer-decay|                                           
-cppcoreguidelines-pro-bounds-constant-array-index|                                           
-cppcoreguidelines-pro-bounds-pointer-arithmetic|                                           
-cppcoreguidelines-pro-type-const-cast|                                           
-cppcoreguidelines-pro-type-cstyle-cast|                                           
-cppcoreguidelines-pro-type-member-init|                                           
-cppcoreguidelines-pro-type-reinterpret-cast|                                           
-cppcoreguidelines-pro-type-static-cast-downcast|                                           
-cppcoreguidelines-pro-type-union-access|                                           
-cppcoreguidelines-pro-type-vararg|                                           
-cppcoreguidelines-rvalue-reference-param-not-moved|                                           
-cppcoreguidelines-slicing|                                           
-cppcoreguidelines-special-member-functions|                                           
-cppcoreguidelines-use-default-member-init|                                           
-cppcoreguidelines-virtual-class-destructor|                                           
-darwin-avoid-spinlock|                                           
-darwin-dispatch-once-nonstatic|                                           
-fuchsia-default-arguments-calls|                                           
-fuchsia-default-arguments-declarations|                                           
-fuchsia-header-anon-namespaces|                                           
-fuchsia-multiple-inheritance|                                           
-fuchsia-overloaded-operator|                                           
-fuchsia-statically-constructed-objects|                                           
-fuchsia-trailing-return|                                           
-fuchsia-virtual-inheritance|                                           
-google-build-explicit-make-pair|                                           
-google-build-namespaces|                                           
-google-build-using-namespace|                                           
-google-default-arguments|                                           
-google-explicit-constructor|                                           
-google-global-names-in-headers|                                           
-google-objc-avoid-nsobject-new|                                           
-google-objc-avoid-throwing-exception|                                           
-google-objc-function-naming|                                           
-google-objc-global-variable-declaration|                                           
-google-readability-avoid-underscore-in-googletest-name|                                           
-google-readability-braces-around-statements|                                           
-google-readability-casting|                                           
-google-readability-function-size|                                           
-google-readability-namespace-comments|                                           
-google-readability-todo|                                           
-google-runtime-int|                                           
-google-runtime-operator|                                           
-google-upgrade-googletest-case|                                           
-hicpp-avoid-c-arrays|                                           
-hicpp-avoid-goto|                                           
-hicpp-braces-around-statements|                                           
-hicpp-deprecated-headers|                                           
-hicpp-exception-baseclass|                                           
-hicpp-explicit-conversions|                                           
-hicpp-function-size|                                           
-hicpp-invalid-access-moved|                                           
-hicpp-member-init|                                           
-hicpp-move-const-arg|                                           
-hicpp-multiway-paths-covered|                                           
-hicpp-named-parameter|                                           
-hicpp-new-delete-operators|                                           
-hicpp-no-array-decay|                                           
-hicpp-no-assembler|                                           
-hicpp-no-malloc|                                           
-hicpp-noexcept-move|                                           
-hicpp-signed-bitwise|                                           
-hicpp-special-member-functions|                                           
-hicpp-static-assert|                                           
-hicpp-undelegated-constructor|                                           
-hicpp-uppercase-literal-suffix|                                           
-hicpp-use-auto|                                           
-hicpp-use-emplace|                                           
-hicpp-use-equals-default|                                           
-hicpp-use-equals-delete|                                           
-hicpp-use-noexcept|                                           
-hicpp-use-nullptr|                                           
-hicpp-use-override|                                           
-hicpp-vararg|                                           
-linuxkernel-must-check-errs|                                           
-llvm-else-after-return|                                           
-llvm-header-guard|                                           
-llvm-include-order|                                           
-llvm-namespace-comment|                                           
-llvm-prefer-isa-or-dyn-cast-in-conditionals|                                           
-llvm-prefer-register-over-unsigned|                                           
-llvm-qualified-auto|                                           
-llvm-twine-local|                                           
-llvmlibc-callee-namespace|                                           
-llvmlibc-implementation-in-namespace|                                           
-llvmlibc-inline-function-decl|                                           
-llvmlibc-restrict-system-libc-headers|                                           
-misc-confusable-identifiers|                                           
-misc-const-correctness|                                           
-misc-definitions-in-headers|                                           
-misc-header-include-cycle|                                           
-misc-include-cleaner|                                           
-misc-misleading-bidirectional|                                           
-misc-misleading-identifier|                                           
-misc-misplaced-const|                                           
-misc-new-delete-overloads|                                           
-misc-no-recursion|                                           
-misc-non-copyable-objects|                                           
-misc-non-private-member-variables-in-classes|                                           
-misc-redundant-expression|                                           
-misc-static-assert|                                           
-misc-throw-by-value-catch-by-reference|                                           
-misc-unconventional-assign-operator|                                           
-misc-uniqueptr-reset-release|                                           
-misc-unused-alias-decls|                                           
-misc-unused-parameters|                                           
-misc-unused-using-decls|                                           
-misc-use-anonymous-namespace|                                           
-modernize-avoid-bind|                                           
-modernize-avoid-c-arrays|                                           
-modernize-concat-nested-namespaces|                                           
-modernize-deprecated-headers|                                           
-modernize-deprecated-ios-base-aliases|                                           
-modernize-loop-convert|                                           
-modernize-macro-to-enum|                                           
-modernize-make-shared|                                           
-modernize-make-unique|                                           
-modernize-pass-by-value|                                           
-modernize-raw-string-literal|                                           
-modernize-redundant-void-arg|                                           
-modernize-replace-auto-ptr|                                           
-modernize-replace-disallow-copy-and-assign-macro|                                           
-modernize-replace-random-shuffle|                                           
-modernize-return-braced-init-list|                                           
-modernize-shrink-to-fit|                                           
-modernize-type-traits|                                           
-modernize-unary-static-assert|                                           
-modernize-use-auto|                                           
-modernize-use-bool-literals|                                           
-modernize-use-default-member-init|                                           
-modernize-use-emplace|                                           
-modernize-use-equals-default|                                           
-modernize-use-equals-delete|                                           
-modernize-use-nodiscard|                                           
-modernize-use-noexcept|                                           
-modernize-use-nullptr|                                           
-modernize-use-override|                                           
-modernize-use-std-print|                                           
-modernize-use-trailing-return-type|                                           
-modernize-use-transparent-functors|                                           
-modernize-use-uncaught-exceptions|                                           
-modernize-use-using|                                           
-mpi-buffer-deref|                                           
-mpi-type-mismatch|                                           
-objc-assert-equals|                                           
-objc-avoid-nserror-init|                                           
-objc-dealloc-in-category|                                           
-objc-forbidden-subclassing|                                           
-objc-missing-hash|                                           
-objc-nsdate-formatter|                                           
-objc-nsinvocation-argument-lifetime|                                           
-objc-property-declaration|                                           
-objc-super-self|                                           
-openmp-exception-escape|                                           
-openmp-use-default-none|                                           
-performance-avoid-endl|                                           
-performance-faster-string-find|                                           
-performance-for-range-copy|                                           
-performance-implicit-conversion-in-loop|                                           
-performance-inefficient-algorithm|                                           
-performance-inefficient-string-concatenation|                                           
-performance-inefficient-vector-operation|                                           
-performance-move-const-arg|                                           
-performance-move-constructor-init|                                           
-performance-no-automatic-move|                                           
-performance-no-int-to-ptr|                                           
-performance-noexcept-destructor|                                           
-performance-noexcept-move-constructor|                                           
-performance-noexcept-swap|                                           
-performance-trivially-destructible|                                           
-performance-type-promotion-in-math-fn|                                           
-performance-unnecessary-copy-initialization|                                           
-performance-unnecessary-value-param|                                           
-portability-restrict-system-includes|                                           
-portability-simd-intrinsics|                                           
-portability-std-allocator-const|                                           
-readability-avoid-const-params-in-decls|                                           
-readability-avoid-unconditional-preprocessor-if|                                           
-readability-braces-around-statements|                                           
-readability-const-return-type|                                           
-readability-container-contains|                                           
-readability-container-data-pointer|                                           
-readability-container-size-empty|                                           
-readability-convert-member-functions-to-static|                                           
-readability-delete-null-pointer|                                           
-readability-duplicate-include|                                           
-readability-else-after-return|                                           
-readability-function-cognitive-complexity|                                           
-readability-function-size|                                           
-readability-identifier-length|                                           
-readability-identifier-naming|                                           
-readability-implicit-bool-conversion|                                           
-readability-inconsistent-declaration-parameter-name|                                           
-readability-isolate-declaration|                                           
-readability-magic-numbers|                                           
-readability-make-member-function-const|                                           
-readability-misleading-indentation|                                           
-readability-misplaced-array-index|                                           
-readability-named-parameter|                                           
-readability-non-const-parameter|                                           
-readability-operators-representation|                                           
-readability-qualified-auto|                                           
-readability-redundant-access-specifiers|                                           
-readability-redundant-control-flow|                                           
-readability-redundant-declaration|                                           
-readability-redundant-function-ptr-dereference|                                           
-readability-redundant-member-init|                                           
-readability-redundant-preprocessor|                                           
-readability-redundant-smartptr-get|                                           
-readability-redundant-string-cstr|                                           
-readability-redundant-string-init|                                           
-readability-simplify-boolean-expr|                                           
-readability-simplify-subscript-expr|                                           
-readability-static-accessed-through-instance|                                           
-readability-static-definition-in-anonymous-namespace|                                           
-readability-string-compare|                                           
-readability-suspicious-call-argument|                                           
-readability-uniqueptr-delete-release|                                           
-readability-uppercase-literal-suffix|                                           
-readability-use-anyofallof|                                           
-zircon-temporary-objects|                                           
+| Check 名称                                                                    | 中文介绍                                                                                                                                                                  | 嵌入式适用 |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| abseil-cleanup-ctad                                                           | 建议将 absl::Cleanup 的初始化方式从工厂函数替换为类模板参数推导（CTAD）以简化代码。                                                                                       | NO         |
+| abseil-duration-addition                                                      | 当一个值已知为 absl::Time 时，建议将另一个值显式转换为 absl::Duration，以在 absl::Time 域中进行加法操作。                                                                 | NO         |
+| abseil-duration-comparison                                                    | 该检查用于发现应在 absl::Duration 域中进行的比较，而不是在浮点或整数域中进行的比较。                                                                                      | NO         |
+| abseil-duration-conversion-cast                                               | 该检查用于检测对 absl::Duration 转换函数的类型转换，并建议使用正确的转换函数替代。                                                                                        | NO         |
+| abseil-duration-division                                                      | 该检查用于发现将 absl::Duration 用于浮点除法时可能导致截断的问题，并建议使用返回浮点值的函数以避免精度丢失。                                                              | NO         |
+| abseil-duration-factory-float                                                 | 该检查用于查找在可以使用更高效的整数版本时，错误地调用了 absl::Duration 工厂函数的浮点重载形式的情况。                                                                    | NO         |
+| abseil-duration-factory-scale                                                 | 检查 absl::Duration 工厂函数中内部缩放的参数，并建议使用更合适的工厂函数或 absl::ZeroDuration() 来提高代码可读性和正确性。                                                | NO         |
+| abseil-duration-subtraction                                                   | 当从 absl::Duration 转换的值参与减法运算时，该检查建议在 absl::Duration 域中进行减法操作以提高代码的明确性和正确性。                                                      | NO         |
+| abseil-duration-unnecessary-conversion                                        | 该检查器用于查找并修复将 absl::Duration 不必要地转换为数值类型再转换回来的情况。                                                                                          | NO         |
+| abseil-faster-strsplit-delimiter                                              | 将 absl::StrSplit() 或 absl::MaxSplits() 中的单字符字符串字面量替换为字符，以提高效率和可读性。                                                                           | NO         |
+| abseil-no-internal-dependencies                                               | 禁止依赖 Abseil 库中带有 internal 命名空间的实现细节，以避免违反兼容性准则。                                                                                              | NO         |
+| abseil-no-namespace                                                           | 禁止代码打开 namespace absl，以避免违反 Abseil 的兼容性指南并可能导致程序出错。                                                                                           | NO         |
+| abseil-redundant-strcat-calls                                                 | 建议移除在将结果传递给另一个 absl::StrCat 或 absl::StrAppend 调用时不必要的 absl::StrCat 调用，以减少临时字符串的构造。                                                   | NO         |
+| abseil-str-cat-append                                                         | 建议将 absl::StrCat() 替换为 absl::StrAppend() 以避免不必要的临时字符串构造，提高代码效率。                                                                               | NO         |
+| abseil-string-find-startswith                                                 | 建议将与 0 比较的 std::string::find() 或 rfind() 替换为 absl::StartsWith()，以提升可读性和性能。                                                                          | NO         |
+| abseil-string-find-str-contains                                               | 该检查器将 s.find(...) == string::npos 替换为 absl::StrContains()，以提升代码可读性并减少类型混用错误。                                                                   | NO         |
+| abseil-time-comparison                                                        | 建议在进行时间比较时使用 absl::Time 类型而非整数类型，以避免因对齐问题导致的潜在错误。                                                                                    | NO         |
+| abseil-time-subtraction                                                       | 该检查用于发现并修复 absl::Time 的减法操作，使其在时间域中进行而非数值域中。                                                                                              | NO         |
+| abseil-upgrade-duration-conversions                                           | 该检查器用于查找在即将到来的 API 更改后需要显式类型转换才能继续编译的 absl::Duration 运算符和工厂函数调用。                                                               | NO         |
+| altera-id-dependent-backward-branch                                           | 检测在循环中使用依赖于线程 ID 的变量或字段，因其会导致循环中出现分支，从而降低性能。                                                                                      | NO         |
+| altera-kernel-name-restriction                                                | 该检查器用于查找文件名为 kernel.cl、Verilog.cl 或 VHDL.cl 的内核文件和包含指令，以避免与内部文件同名导致的编译错误。                                                      | NO         |
+| altera-single-work-item-barrier                                               | 该检查器用于查找在 OpenCL 内核函数中调用 barrier 函数但未调用 ID 函数的情况，以避免在使用较新版本 Altera 编译器时被错误地当作 NDRange 内核执行。                          | NO         |
+| altera-struct-pack-align                                                      | 该检查器用于发现结构体在内存对齐和打包方面的低效问题，并建议通过添加或修改结构体属性来优化内存使用和访问效率。                                                            | YES        |
+| altera-unroll-loops                                                           | 该检查器用于发现未展开的内部循环，以及具有未知循环边界或大量迭代次数的完全展开循环，以建议进行部分展开以提升 OpenCL 内核性能。                                            | NO         |
+| android-cloexec-accept                                                        | 建议使用 accept4() 替代 accept()，以防止敏感文件描述符在 fork+exec 后泄露到低权限的 SELinux 域中。                                                                        | YES        |
+| android-cloexec-accept4                                                       | 应在调用 accept4() 时使用 SOCK_CLOEXEC 标志，以防止文件描述符泄漏。                                                                                                       | YES        |
+| android-cloexec-creat                                                         | 不推荐使用 creat()，建议使用带有 O_CLOEXEC 标志的 open() 以提高安全性。                                                                                                   | YES        |
+| android-cloexec-dup                                                           | 使用 dup() 不推荐，建议使用 fcntl() 来设置 close-on-exec 标志，以防止敏感文件在 fork+exec 后仍保持打开状态。                                                              | YES        |
+| android-cloexec-epoll-create                                                  | 建议使用支持 close-on-exec 的 epoll_create1() 替代不推荐的 epoll_create()。                                                                                               | YES        |
+| android-cloexec-epoll-create1                                                 | 应在调用 epoll_create1() 时包含 EPOLL_CLOEXEC 标志，以避免文件描述符泄漏。                                                                                                | YES        |
+| android-cloexec-fopen                                                         | 建议在 fopen() 的模式字符串中包含 'e'，以确保文件描述符在执行 exec 时被自动关闭。                                                                                         | YES        |
+| android-cloexec-inotify-init                                                  | 避免使用 inotify_init()，推荐使用更安全的 inotify_init1()。                                                                                                               | NO         |
+| android-cloexec-inotify-init1                                                 | 应在调用 inotify_init1() 时包含 IN_CLOEXEC 标志，以避免文件描述符泄漏。                                                                                                   | NO         |
+| android-cloexec-memfd-create                                                  | 应在 memfd_create() 的 type 参数中包含 MFD_CLOEXEC，以避免文件描述符泄漏。                                                                                                | NO         |
+| android-cloexec-open                                                          | 该检查用于确保在使用 open 类函数打开文件时包含 O_CLOEXEC 标志，以防止敏感文件在 fork+exec 后被低权限进程继承。                                                            | YES        |
+| android-cloexec-pipe                                                          | 检测使用 pipe() 的情况，建议使用带有 O_CLOEXEC 标志的 pipe2() 以防止文件描述符在子进程中泄露。                                                                            | YES        |
+| android-cloexec-pipe2                                                         | 该检查确保调用 pipe2() 时使用了 O_CLOEXEC 标志，以防止文件描述符在子进程中泄露。                                                                                          | YES        |
+| android-cloexec-socket                                                        | 使用 `socket()` 时应在类型参数中包含 `SOCK_CLOEXEC` 以避免文件描述符泄漏。                                                                                                | YES        |
+| android-comparison-in-temp-failure-retry                                      | 诊断在 TEMP_FAILURE_RETRY 宏参数中错误地使用比较操作的情况，这种用法在绝大多数情况下都是错误的，且常常会悄无声息地破坏该宏的重试机制。                                    | YES        |
+| boost-use-ranges                                                              | 检测可以用 Boost ranges 版本替代的标准库迭代器算法调用。                                                                                                                  | NO         |
+| boost-use-to-string                                                           | 该检查器发现使用 boost::lexical_cast 将整数类型转换为 std::string 或 std::wstring 的情况，并将其替换为 std::to_string 或 std::to_wstring。                                | NO         |
+| bugprone-argument-comment                                                     | 检查参数注释是否与形参名称匹配，以发现拼写错误并提供自动修复建议。                                                                                                        | YES        |
+| bugprone-assert-side-effect                                                   | 检测 assert() 中包含副作用的表达式，因为这可能导致调试版本和发布版本行为不一致。                                                                                          | YES        |
+| bugprone-assignment-in-if-condition                                           | 该检查器用于发现 if 条件语句中的赋值操作，这类写法容易引入错误，因为可能原本意图是进行相等性比较。                                                                        | YES        |
+| bugprone-bad-signal-to-kill-thread                                            | 该检查用于发现使用 pthread_kill 发送 SIGTERM 信号终止线程的情况，因为 SIGTERM 会终止整个进程而非单个线程。                                                                | YES        |
+| bugprone-bitwise-pointer-cast                                                 | 该检查用于警告通过 std::bit_cast 或 memcpy 在指针之间进行类型转换的代码，因为这种做法可能违反严格别名规则并导致未定义行为。                                               | YES        |
+| bugprone-bool-pointer-implicit-conversion                                     | 检测基于从 `bool` 指针到 `bool` 的隐式转换的条件语句。                                                                                                                    | YES        |
+| bugprone-branch-clone                                                         | 检测 if/else、switch 语句和条件运算符中重复的分支，以发现可能的复制粘贴错误或冗余逻辑。                                                                                   | YES        |
+| bugprone-capturing-this-in-member-variable                                    | 该检查器用于发现将捕获的 this 指针存储为类成员的 lambda 表达式，而未正确处理拷贝构造、移动构造和赋值操作的情况。                                                          | YES        |
+| bugprone-casting-through-void                                                 | 避免通过 void\* 进行两步类型转换，以提升代码可读性、保留编译器警告并防止运行时错误。                                                                                      | YES        |
+| bugprone-chained-comparison                                                   | 该检查器检测可能导致意外行为或逻辑错误的链式比较运算符使用。                                                                                                              | YES        |
+| bugprone-compare-pointer-to-member-virtual-function                           | 该检查器用于检测将指向成员虚函数的指针与非空指针常量进行比较时可能导致未指定行为的问题。                                                                                  | YES        |
+| bugprone-copy-constructor-init                                                | 该检查确保派生类的拷贝构造函数正确调用基类的拷贝构造函数，以防止未定义行为和提高代码质量。                                                                                | YES        |
+| bugprone-crtp-constructor-accessibility                                       | 该检查用于检测容易出错的“奇异递归模板模式”（CRTP）用法，防止 CRTP 类在其自身和派生类之外被构造。                                                                          | YES        |
+| bugprone-dangling-handle                                                      | 检测从临时对象构造的值句柄（如 std::string_view）所导致的悬垂引用问题。                                                                                                   | YES        |
+| bugprone-dynamic-static-initializers                                          | 检测头文件中动态初始化的静态变量，避免在多线程环境下因初始化顺序不确定而引发竞态条件。                                                                                    | YES        |
+| bugprone-easily-swappable-parameters                                          | 该检查器用于发现函数定义中相邻的可转换类型参数，防止调用时参数顺序被错误交换。                                                                                            | YES        |
+| bugprone-empty-catch                                                          | 空的 catch 语句可能导致隐藏的错误、安全问题、代码质量下降和程序不可靠，因此应避免使用并妥善处理异常。                                                                     | YES        |
+| bugprone-exception-escape                                                     | 检测可能抛出异常但不应抛出的函数，如析构函数、移动构造函数、main 函数等，以避免未定义行为或资源泄漏。                                                                     | YES        |
+| bugprone-fold-init-type                                                       | 该检查器会标记在使用如 std::accumulate 等折叠操作时初始值类型与元素类型不匹配，可能导致精度丢失的问题。                                                                   | YES        |
+| bugprone-forward-declaration-namespace                                        | 检查未使用的前向声明是否位于错误的命名空间中。                                                                                                                            | YES        |
+| bugprone-forwarding-reference-overload                                        | 该检查用于发现完美转发构造函数可能会隐藏拷贝或移动构造函数的情况，导致构造行为令人困惑。                                                                                  | YES        |
+| bugprone-implicit-widening-of-multiplication-result                           | 该检查用于诊断乘法结果被隐式扩展的情况，并建议通过显式类型转换或在更宽的类型中执行乘法来避免隐式扩展。                                                                    | YES        |
+| bugprone-inaccurate-erase                                                     | 该检查器用于检测因错误使用 erase() 方法而导致未能正确删除容器中所有冗余元素的情况。                                                                                       | YES        |
+| bugprone-inc-dec-in-conditions                                                | 当变量在复杂条件中既被修改又被引用时，可能导致行为出乎意料，建议将修改操作移出条件语句以避免歧义。                                                                        | YES        |
+| bugprone-incorrect-enable-if                                                  | 该检查器用于检测未正确命名 std::enable_if 中嵌套类型 type 的错误用法。                                                                                                    | YES        |
+| bugprone-incorrect-enable-shared-from-this                                    | 检测未公有继承自 std::enable_shared_from_this 的类或结构体，以避免调用 shared_from_this 时出现未定义行为。                                                                | YES        |
+| bugprone-incorrect-roundings                                                  | 检查已知会产生不正确舍入结果的代码模式使用情况。                                                                                                                          | YES        |
+| bugprone-infinite-loop                                                        | 该检查用于发现明显的死循环（即循环条件变量在循环体中未被修改）。                                                                                                          | YES        |
+| bugprone-integer-division                                                     | 检测在浮点上下文中使用整数除法可能导致精度丢失的情况。                                                                                                                    | YES        |
+| bugprone-lambda-function-name                                                 | 该检查器用于检测在 lambda 表达式中试图获取函数名称的行为，因为此时返回的总是 operator()，这通常不是开发者的本意。                                                         | YES        |
+| bugprone-macro-parentheses                                                    | 该检查用于发现由于缺少括号而可能导致宏行为异常的问题。                                                                                                                    | YES        |
+| bugprone-macro-repeated-side-effects                                          | 检查宏中具有副作用的参数被重复使用的情况。                                                                                                                                | YES        |
+| bugprone-misleading-setter-of-reference                                       | 该检查器用于发现那些看起来像 setter 的成员函数，它们接受指针参数并将其解引用后赋值给类中引用类型的成员变量，这种写法可能导致误解和意外行为。                              | YES        |
+| bugprone-misplaced-operator-in-strlen-in-alloc                                | 该检查器用于发现将 1 错误地加在传递给 strlen 等函数的参数上，而不是加在其返回值上，并将结果用于内存分配的情况。                                                           | YES        |
+| bugprone-misplaced-pointer-arithmetic-in-alloc                                | 检测将整数表达式错误地加到内存分配函数返回值上的情况，而不是加到其参数上。                                                                                                | YES        |
+| bugprone-misplaced-widening-cast                                              | 该检查会在计算结果被强制转换为更大类型时发出警告，如果转换意图是为了避免精度丢失，那么转换位置错误可能导致精度丢失。                                                      | YES        |
+| bugprone-move-forwarding-reference                                            | 该检查器会在转发引用上错误地使用 std::move 时发出警告，建议使用 std::forward 以避免将左值错误地移动。                                                                     | YES        |
+| bugprone-multi-level-implicit-pointer-conversion                              | 检测不同间接级别的指针之间的隐式转换，以防止可能导致未定义行为的问题。                                                                                                    | YES        |
+| bugprone-multiple-new-in-one-expression                                       | 避免在同一表达式中多次使用 new 操作符，以防在异常抛出时导致内存泄漏。                                                                                                     | YES        |
+| bugprone-multiple-statement-macro                                             | 检测在未加大括号的条件语句中使用包含多个语句的宏，避免只有第一个语句受条件控制而其他语句无条件执行的问题。                                                                | YES        |
+| bugprone-narrowing-conversions                                                | 该检查用于发现可能导致数据精度丢失的隐式窄化类型转换。                                                                                                                    | YES        |
+| bugprone-no-escape                                                            | 检测带有 noescape 属性的指针被异步执行的代码块捕获的情况，这是不安全的。                                                                                                  | YES        |
+| bugprone-non-zero-enum-to-bool-conversion                                     | 检测将不含零值枚举成员的枚举类型隐式或显式转换为 bool 类型的情况，以避免始终为 true 的布尔表达式导致的可读性和维护性问题。                                                | YES        |
+| bugprone-nondeterministic-pointer-iteration-order                             | 该检查器用于发现无序容器中指针使用可能导致非确定性行为的情况。                                                                                                            | YES        |
+| bugprone-not-null-terminated-result                                           | 该检查器用于发现可能导致结果字符串未以空字符结尾的函数调用，从而避免读取字符串时出现未定义行为。                                                                          | YES        |
+| bugprone-optional-value-conversion                                            | 检测从 optional 类型中提取值后又重新构造相同 optional 类型的冗余或可能非预期的转换，以避免异常或不必要的初始化。                                                          | YES        |
+| bugprone-parent-virtual-call                                                  | 检测并修复对祖父类虚函数的调用，而非对被重写的父类虚函数的调用。                                                                                                          | YES        |
+| bugprone-pointer-arithmetic-on-polymorphic-object                             | 该检查用于发现对包含虚函数的类进行指针运算的情况，这种操作在静态类型与动态类型不一致时会导致未定义行为。                                                                  | YES        |
+| bugprone-posix-return                                                         | 该检查器用于检测对 pthread*\* 或 posix*\* 函数返回值的错误判断，这些函数在失败时返回正的 errno 值，而不是负值。                                                           | YES        |
+| bugprone-redundant-branch-condition                                           | 该检查器用于发现嵌套 if 语句中重复检查未被修改的条件变量的冗余逻辑。                                                                                                      | YES        |
+| bugprone-reserved-identifier                                                  | 该检查用于检测用户代码中使用了被 C/C++ 标准保留供实现使用的标识符。                                                                                                       | YES        |
+| bugprone-return-const-ref-from-parameter                                      | 检测将常量引用参数作为常量引用返回的情况，这可能在调用者传入将被销毁的临时对象时导致悬垂引用错误。                                                                        | YES        |
+| bugprone-shared-ptr-array-mismatch                                            | 该检查器用于发现将 shared_ptr<T> 错误地初始化为指向数组（new T[]）的情况，从而避免因使用错误的 delete 操作符导致的内存释放问题。                                          | YES        |
+| bugprone-signal-handler                                                       | 该检查器用于检测信号处理函数中可能导致未定义行为的代码结构，确保仅调用异步安全的函数。                                                                                    | YES        |
+| bugprone-signed-char-misuse                                                   | 该检查器用于发现 signed char 到整数的转换中可能导致程序错误的情况，特别是在处理非 ASCII 字符时可能引发的误解。                                                            | YES        |
+| bugprone-sizeof-container                                                     | 该检查器发现对 STL 容器类型使用 sizeof 表达式的情况，这通常是用户误将 sizeof 当作获取容器元素数量的方法，实际上应使用 .size()。                                           | YES        |
+| bugprone-sizeof-expression                                                    | 该检查器用于发现可能错误地使用 sizeof 表达式的情况，以避免由此引发的逻辑错误或潜在漏洞。                                                                                  | YES        |
+| bugprone-spuriously-wake-up-functions                                         | 该检查器用于发现未在循环中调用可能出现虚假唤醒的等待函数的问题。                                                                                                          | YES        |
+| bugprone-standalone-empty                                                     | 当对一个范围调用 empty() 且忽略其返回结果时，该检查会发出警告，并建议使用 clear() 来清空内容（如果该成员函数可用）。                                                      | YES        |
+| bugprone-string-constructor                                                   | 该检查器用于发现字符串构造函数中可疑且可能是错误的用法，例如参数顺序错误或使用无效长度。                                                                                  | YES        |
+| bugprone-string-integer-assignment                                            | 该检查器用于发现将整数赋值给 std::basic_string（如 std::string、std::wstring 等）时可能导致的隐式类型转换问题。                                                           | YES        |
+| bugprone-string-literal-with-embedded-nul                                     | 检测字符串字面量中嵌入的 NUL 字符并验证其使用是否合法。                                                                                                                   | YES        |
+| bugprone-stringview-nullptr                                                   | 防止将空指针传递给 std::string_view 的构造函数，从而避免未定义行为。                                                                                                      | YES        |
+| bugprone-suspicious-enum-usage                                                | 该检查器用于检测枚举类型被错误地用作位掩码的可疑用法。                                                                                                                    | YES        |
+| bugprone-suspicious-include                                                   | 该检查器用于检测包含了看似实现文件的 include 语句，这类用法常常会导致难以追踪的一致性定义规则（ODR）违规问题。                                                            | YES        |
+| bugprone-suspicious-memory-comparison                                         | 该检查用于发现基于参数属性的潜在不正确的 memcmp() 调用。                                                                                                                  | YES        |
+| bugprone-suspicious-memset-usage                                              | 该检查器用于发现 memset() 调用中参数可能存在的错误，如填充值使用字符 '0'、填充值被截断或字节数为零等问题。                                                                | YES        |
+| bugprone-suspicious-missing-comma                                             | 该检查用于发现数组初始化列表中由于缺少逗号而导致字符串字面量被意外拼接的问题。                                                                                            | YES        |
+| bugprone-suspicious-realloc-usage                                             | 该检查器发现将 realloc 的返回值直接赋值给原指针的用法，这种用法在 realloc 失败时可能导致内存泄漏。                                                                        | YES        |
+| bugprone-suspicious-semicolon                                                 | 该检查器用于发现意外改变代码含义的多余分号，尤其是在 if、while、for 等语句中其主体仅为一个分号的情况。                                                                    | YES        |
+| bugprone-suspicious-string-compare                                            | 该检查用于发现运行时字符串比较函数的可疑用法，避免错误地比较返回值或在错误的上下文中使用它们。                                                                            | YES        |
+| bugprone-suspicious-stringview-data-usage                                     | 该检查器识别对 std::string_view::data() 的可疑使用，这些使用可能由于字符串未正确以空字符结尾而导致越界读取数据。                                                          | YES        |
+| bugprone-swapped-arguments                                                    | 通过检查实参与形参之间的隐式类型转换，发现可能被交换的函数参数。                                                                                                          | YES        |
+| bugprone-switch-missing-default-case                                          | 该检查有助于识别缺少 default 分支的 switch 语句，确保所有可能的情况都被妥善处理，从而减少程序错误和意外行为的风险。                                                       | YES        |
+| bugprone-tagged-union-member-count                                            | 该检查用于发现标签联合体中标签数量与联合体数据成员数量不一致的情况。                                                                                                      | YES        |
+| bugprone-terminating-continue                                                 | 检测在条件恒为 false 的 do while 循环中使用 continue 语句的情况，因为这种 continue 会导致循环提前终止。                                                                   | YES        |
+| bugprone-throw-keyword-missing                                                | 警告可能遗漏的 throw 关键字，当创建了一个异常类型的临时对象但未实际抛出时提示可能是程序员的疏漏。                                                                         | YES        |
+| bugprone-too-small-loop-variable                                              | 检测 for 循环中使用的循环变量类型过小，无法表示完整迭代范围内的所有值，可能导致无限循环或程序冻结。                                                                       | YES        |
+| bugprone-unchecked-optional-access                                            | 该检查用于识别在未明确判断 std::optional<T> 等类型是否包含值的情况下直接访问其值的潜在不安全行为。                                                                        | YES        |
+| bugprone-undefined-memory-manipulation                                        | 该检查器发现对非 TriviallyCopyable 对象使用内存操作函数（如 memset、memcpy 和 memmove）可能导致未定义行为的情况。                                                         | YES        |
+| bugprone-undelegated-constructor                                              | 检测在构造函数中创建临时对象的情况，这些情况看起来像是调用了同一类的另一个构造函数，而用户很可能是想使用委托构造函数或基类初始化。                                        | YES        |
+| bugprone-unhandled-exception-at-new                                           | 该检查器用于发现使用 new 分配内存时未处理 std::bad_alloc 异常的情况。                                                                                                     | YES        |
+| bugprone-unhandled-self-assignment                                            | 检测用户自定义的拷贝赋值运算符是否未妥善处理自赋值情况，以防止对象状态被破坏。                                                                                            | YES        |
+| bugprone-unintended-char-ostream-output                                       | 该检查器用于发现将 unsigned char 或 signed char 类型的值输出到 ostream 时可能导致的非预期字符输出问题。                                                                   | YES        |
+| bugprone-unique-ptr-array-mismatch                                            | 该检查器用于发现将 std::unique_ptr<T> 错误地用 new T[] 初始化的情况，从而避免使用错误的 delete 操作导致内存泄漏。                                                         | YES        |
+| bugprone-unsafe-functions                                                     | 该检查用于检测存在更安全或已弃用的函数，并建议使用更安全的替代方案。                                                                                                      | YES        |
+| bugprone-unused-local-non-trivial-variable                                    | 警告函数中未使用的非平凡局部变量，以帮助发现潜在的资源浪费或逻辑错误。                                                                                                    | YES        |
+| bugprone-unused-raii                                                          | 检测看起来像 RAII 对象但未被使用的临时变量，避免其析构函数在关键代码执行前被调用。                                                                                        | YES        |
+| bugprone-unused-return-value                                                  | 警告未使用的函数返回值，以避免潜在的逻辑错误或资源泄漏。                                                                                                                  | YES        |
+| bugprone-use-after-move                                                       | 警告在对象被 std::move 移动后仍然使用该对象的情况，以防止潜在的未定义行为或程序错误。                                                                                     | YES        |
+| bugprone-virtual-near-miss                                                    | 警告当一个函数与基类中的虚函数名称非常相似且函数签名相同时，可能是意图覆盖但拼写错误的情况。                                                                              | YES        |
+| cert-arr39-c                                                                  | 该检查是一个别名，请参阅 bugprone-sizeof-expression 了解更多信息。                                                                                                        | NO         |
+| cert-con36-c                                                                  | 防止因条件变量虚假唤醒而导致的并发错误。                                                                                                                                  | NO         |
+| cert-con54-cpp                                                                | 防止由于条件变量虚假唤醒而导致的并发错误。                                                                                                                                | NO         |
+| cert-ctr56-cpp                                                                | 该检查是一个别名，请参阅 bugprone-pointer-arithmetic-on-polymorphic-object 了解更多信息。                                                                                 | NO         |
+| cert-dcl03-c                                                                  | 该检查是一个别名，请参阅 misc-static-assert 以获取更多信息。                                                                                                              | NO         |
+| cert-dcl16-c                                                                  | 确保整数字面量的后缀使用大写字母以提高可读性。                                                                                                                            | NO         |
+| cert-dcl37-c                                                                  | 该检查是一个别名，请参阅 bugprone-reserved-identifier 获取更多信息。                                                                                                      | NO         |
+| cert-dcl50-cpp                                                                | 禁止定义 C 风格的可变参数函数。                                                                                                                                           | NO         |
+| cert-dcl51-cpp                                                                | 禁止使用保留标识符以避免与实现定义的名称发生冲突。                                                                                                                        | NO         |
+| cert-dcl54-cpp                                                                | 该检查是一个别名，请参阅 misc-new-delete-overloads 了解更多信息。                                                                                                         | NO         |
+| cert-dcl58-cpp                                                                | 禁止修改 std 或 posix 命名空间，以避免引发未定义行为。                                                                                                                    | NO         |
+| cert-dcl59-cpp                                                                | 该检查是一个别名，请参阅 google-build-namespaces 了解更多信息。                                                                                                           | NO         |
+| cert-env33-c                                                                  | 禁止调用 system()、popen() 和 \_popen() 等函数以避免执行命令处理器。                                                                                                      | NO         |
+| cert-err09-cpp                                                                | 避免以值捕获异常对象，应通过引用捕获以防止对象切割和性能问题。                                                                                                            | NO         |
+| cert-err33-c                                                                  | 该检查用于警告未使用函数返回值的情况，避免在发生错误时因忽略返回值而导致意外行为。                                                                                        | NO         |
+| cert-err34-c                                                                  | 该检查会标记那些在将字符串转换为数字时未验证转换有效性的函数调用，例如 atoi() 或 scanf()。                                                                                | NO         |
+| cert-err52-cpp                                                                | 禁止使用 setjmp() 和 longjmp() 函数。                                                                                                                                     | NO         |
+| cert-err58-cpp                                                                | 该检查会标记所有初始化器可能抛出异常的 static 或 thread_local 变量声明。                                                                                                  | NO         |
+| cert-err60-cpp                                                                | 该检查会标记所有异常对象不是 noexcept 拷贝构造的 throw 表达式。                                                                                                           | NO         |
+| cert-err61-cpp                                                                | 通过值抛出异常并通过引用捕获，以避免对象切割和不必要的复制。                                                                                                              | NO         |
+| cert-exp42-c                                                                  | 检测可疑的内存比较操作，以避免潜在的逻辑错误。                                                                                                                            | NO         |
+| cert-fio38-c                                                                  | 该检查是一个别名，请参阅 misc-non-copyable-objects 了解更多信息。                                                                                                         | NO         |
+| cert-flp30-c                                                                  | 该检查会标记那些使用浮点类型作为循环控制变量的 for 循环。                                                                                                                 | NO         |
+| cert-flp37-c                                                                  | 检测可疑的内存比较操作，以避免潜在的逻辑错误。                                                                                                                            | NO         |
+| cert-int09-c                                                                  | 确保枚举的初始值明确，以提高代码可读性和可维护性。                                                                                                                        | NO         |
+| cert-mem57-cpp                                                                | 避免对具有扩展对齐要求的类型使用默认的 operator new。                                                                                                                     | NO         |
+| cert-msc24-c                                                                  | 检测使用不安全函数以避免潜在的安全漏洞。                                                                                                                                  | NO         |
+| cert-msc30-c                                                                  | 该检查是一个别名，请参阅 cert-msc50-cpp 以获取更多信息。                                                                                                                  | NO         |
+| cert-msc32-c                                                                  | 该检查是一个别名，请参阅 cert-msc51-cpp 以获取更多信息。                                                                                                                  | NO         |
+| cert-msc33-c                                                                  | 该检查是一个别名，请参阅 bugprone-unsafe-functions 以获取更多信息。                                                                                                       | NO         |
+| cert-msc50-cpp                                                                | 该检查会对使用 `std::rand()` 的代码发出警告，因为其生成的伪随机数可预测，不安全。                                                                                         | YES        |
+| cert-msc51-cpp                                                                | 该检查器会标记所有使用默认参数、常量表达式或用户可配置类型初始化或设定种子的伪随机数引擎和适配器实例，以及调用 srand() 的情况，以避免因可预测的种子导致的安全漏洞。       | YES        |
+| cert-msc54-cpp                                                                | 检测信号处理程序中不安全的函数使用，以避免在异步上下文中引发未定义行为。                                                                                                  | NO         |
+| cert-oop11-cpp                                                                | 避免在移动构造函数中通过复制初始化成员或基类。                                                                                                                            | NO         |
+| cert-oop54-cpp                                                                | 检测未处理自我赋值的情况，以避免潜在的资源泄漏或未定义行为。                                                                                                              | NO         |
+| cert-oop57-cpp                                                                | 该检查会标记对非平凡类型使用标准库函数如 memset、memcpy 和 memcmp 及其类似函数的情况。                                                                                    | NO         |
+| cert-oop58-cpp                                                                | 该检查用于发现拷贝构造函数和拷贝赋值运算符中对被拷贝对象及其直接或间接成员的赋值操作。                                                                                    | NO         |
+| cert-pos44-c                                                                  | 该检查是一个别名，请参阅 bugprone-bad-signal-to-kill-thread 了解更多信息。                                                                                                | NO         |
+| cert-pos47-c                                                                  | 该检查是一个别名，详见 concurrency-thread-canceltype-asynchronous。                                                                                                       | NO         |
+| cert-sig30-c                                                                  | 检测信号处理程序中不安全的操作，以避免在异步上下文中引发未定义行为。                                                                                                      | NO         |
+| cert-str34-c                                                                  | 检测有符号字符类型被误用的情况，以避免未定义行为或逻辑错误。                                                                                                              | NO         |
+| clang-analyzer-core.BitwiseShift                                              | 检测位移操作导致未定义行为的情况。                                                                                                                                        | YES        |
+| clang-analyzer-core.CallAndMessage                                            | 检查函数调用和 Objective-C 消息表达式中的逻辑错误（例如未初始化的参数、空函数指针）。                                                                                     | YES        |
+| clang-analyzer-core.DivideZero                                                | 检测除以零的操作。                                                                                                                                                        | YES        |
+| clang-analyzer-core.NonNullParamChecker                                       | 检查传递给函数的参数是否为 null 指针，而这些函数参数是引用类型或被标记为 'nonnull' 属性。                                                                                 | YES        |
+| clang-analyzer-core.NullDereference                                           | 检查空指针的解引用操作。                                                                                                                                                  | YES        |
+| clang-analyzer-core.StackAddressEscape                                        | 检查函数中是否有栈内存地址被错误地泄露到函数外部。                                                                                                                        | YES        |
+| clang-analyzer-core.UndefinedBinaryOperatorResult                             | 检查二元运算符结果是否未定义。                                                                                                                                            | YES        |
+| clang-analyzer-core.uninitialized.ArraySubscript                              | 检查是否存在未初始化的值被用作数组下标的情况。                                                                                                                            | YES        |
+| clang-analyzer-core.uninitialized.Assign                                      | 检查赋值时是否使用了未初始化的值。                                                                                                                                        | YES        |
+| clang-analyzer-core.uninitialized.Branch                                      | 检查是否存在未初始化的值被用作分支条件。                                                                                                                                  | YES        |
+| clang-analyzer-core.uninitialized.CapturedBlockVariable                       | 检查捕获未初始化值的代码块。                                                                                                                                              | YES        |
+| clang-analyzer-core.uninitialized.NewArraySize                                | 检查 new[] 表达式中数组大小是否未定义。                                                                                                                                   | YES        |
+| clang-analyzer-core.uninitialized.UndefReturn                                 | 检查是否有未初始化的值被返回给调用者。                                                                                                                                    | YES        |
+| clang-analyzer-core.VLASize                                                   | 检查是否声明了大小未定义或为零的变长数组（VLA）。                                                                                                                         | YES        |
+| clang-analyzer-cplusplus.ArrayDelete                                          | 检测以基类形式析构多态对象数组的情况。                                                                                                                                    | YES        |
+| clang-analyzer-cplusplus.InnerPointer                                         | 检查 C++ 容器在重新分配或释放后仍被使用的内部指针。                                                                                                                       | YES        |
+| clang-analyzer-cplusplus.Move                                                 | 检测 C++ 中使用已被移动对象的错误。                                                                                                                                       | YES        |
+| clang-analyzer-cplusplus.NewDelete                                            | 检查 new/delete 管理的内存，检测重复释放和释放后使用的问题。                                                                                                              | YES        |
+| clang-analyzer-cplusplus.NewDeleteLeaks                                       | 检查内存泄漏，追踪由 new/delete 管理的内存。                                                                                                                              | YES        |
+| clang-analyzer-cplusplus.PlacementNew                                         | 检查默认的 placement new 操作符是否被提供了具有足够存储容量的指针。                                                                                                       | YES        |
+| clang-analyzer-cplusplus.SelfAssignment                                       | 检查 C++ 的拷贝和移动赋值运算符中是否存在自我赋值。                                                                                                                       | YES        |
+| clang-analyzer-cplusplus.StringChecker                                        | 检查 C++ 中 std::string 的错误。                                                                                                                                          | YES        |
+| clang-analyzer-deadcode.DeadStores                                            | 检查是否存在赋值后从未被读取的变量。                                                                                                                                      | YES        |
+| clang-analyzer-fuchsia.HandleChecker                                          | 该检查器用于检测与 Fuchsia 句柄相关的资源泄漏问题。                                                                                                                       | YES        |
+| clang-analyzer-nullability.NullableDereferenced                               | 当可为空指针被解引用时发出警告。                                                                                                                                          | YES        |
+| clang-analyzer-nullability.NullablePassedToNonnull                            | 当一个可为空的指针被传递给一个标注为非空的指针类型时发出警告。                                                                                                            | YES        |
+| clang-analyzer-nullability.NullableReturnedFromNonnull                        | 当函数声明为返回非空（\_Nonnull）指针时，如果实际返回了可能为空的指针，则会发出警告。                                                                                     | YES        |
+| clang-analyzer-nullability.NullPassedToNonnull                                | 当一个空指针被传递给一个标注为 \_Nonnull 类型的指针时会发出警告。                                                                                                         | YES        |
+| clang-analyzer-nullability.NullReturnedFromNonnull                            | 当从具有 \_Nonnull 返回类型的函数返回空指针时发出警告。                                                                                                                   | YES        |
+| clang-analyzer-optin.core.EnumCastOutOfRange                                  | 检查将整数转换为枚举类型时是否存在超出枚举值范围的情况。                                                                                                                  | YES        |
+| clang-analyzer-optin.cplusplus.UninitializedObject                            | 报告对象构造后未初始化的字段。                                                                                                                                            | YES        |
+| clang-analyzer-optin.cplusplus.VirtualCall                                    | 检查构造或析构过程中对虚函数的调用。                                                                                                                                      | YES        |
+| clang-analyzer-optin.mpi.MPI-Checker                                          | 检查 MPI 代码。                                                                                                                                                           | YES        |
+| clang-analyzer-optin.osx.cocoa.localizability.EmptyLocalizationContextChecker | 检查 NSLocalizedString 宏是否包含用于上下文的注释。                                                                                                                       | YES        |
+| clang-analyzer-optin.osx.cocoa.localizability.NonLocalizedStringChecker       | 警告将未本地化的 NSString 传递给期望本地化 NSString 的 UI 方法的用法。                                                                                                    | YES        |
+| clang-analyzer-optin.performance.GCDAntipattern                               | 检测使用 Grand Central Dispatch 时的性能反模式。                                                                                                                          | YES        |
+| clang-analyzer-optin.performance.Padding                                      | 检查结构体中由于填充造成的空间浪费。                                                                                                                                      | YES        |
+| clang-analyzer-optin.portability.UnixAPI                                      | 发现 UNIX/Posix 函数中依赖于实现的行为。                                                                                                                                  | YES        |
+| clang-analyzer-optin.taint.TaintedAlloc                                       | 检查内存分配中大小参数可能是受污染（攻击者控制）值的情况。                                                                                                                | YES        |
+| clang-analyzer-osx.API                                                        | 检查各种 Apple API 的正确使用。                                                                                                                                           | NO         |
+| clang-analyzer-osx.cocoa.AtSync                                               | 检查是否使用了 nil 指针作为 @synchronized 的互斥锁。                                                                                                                      | NO         |
+| clang-analyzer-osx.cocoa.AutoreleaseWrite                                     | 警告在 Objective-C 中从不同的自动释放池写入自动释放对象可能导致崩溃的问题。                                                                                               | NO         |
+| clang-analyzer-osx.cocoa.ClassRelease                                         | 检查是否直接对一个类发送 'retain'、'release' 或 'autorelease' 消息。                                                                                                      | NO         |
+| clang-analyzer-osx.cocoa.Dealloc                                              | 警告缺少正确实现 -dealloc 方法的 Objective-C 类。                                                                                                                         | NO         |
+| clang-analyzer-osx.cocoa.IncompatibleMethodTypes                              | 警告具有类型不兼容的 Objective-C 方法签名。                                                                                                                               | NO         |
+| clang-analyzer-osx.cocoa.Loops                                                | 改进了对使用 Cocoa 集合类型的循环的建模。                                                                                                                                 | NO         |
+| clang-analyzer-osx.cocoa.MissingSuperCall                                     | 警告缺少必要调用父类方法的 Objective-C 方法。                                                                                                                             | NO         |
+| clang-analyzer-osx.cocoa.NilArg                                               | 检查 Objective-C 方法调用中禁止的 nil 参数。                                                                                                                              | NO         |
+| clang-analyzer-osx.cocoa.NonNilReturnValue                                    | 建模那些保证返回非 nil 值的 API。                                                                                                                                         | NO         |
+| clang-analyzer-osx.cocoa.NSAutoreleasePool                                    | 警告在 Objective-C 垃圾回收模式下对 NSAutoreleasePool 的次优使用。                                                                                                        | NO         |
+| clang-analyzer-osx.cocoa.NSError                                              | 检查 NSError\*\* 参数的使用。                                                                                                                                             | NO         |
+| clang-analyzer-osx.cocoa.ObjCGenerics                                         | 检查在使用 Objective-C 泛型时的类型错误。                                                                                                                                 | NO         |
+| clang-analyzer-osx.cocoa.RetainCount                                          | 检查内存泄漏和不正确的引用计数管理。                                                                                                                                      | NO         |
+| clang-analyzer-osx.cocoa.RunLoopAutoreleaseLeak                               | 检查自动释放池中永远不会被清空的内存泄漏问题。                                                                                                                            | NO         |
+| clang-analyzer-osx.cocoa.SelfInit                                             | 检查在初始化方法中是否正确初始化了 'self'。                                                                                                                               | NO         |
+| clang-analyzer-osx.cocoa.SuperDealloc                                         | 警告在 Objective-C 中不当使用 [super dealloc]。                                                                                                                           | NO         |
+| clang-analyzer-osx.cocoa.UnusedIvars                                          | 警告从未使用的私有实例变量。                                                                                                                                              | NO         |
+| clang-analyzer-osx.cocoa.VariadicMethodTypes                                  | 检查是否将非 Objective-C 类型传递给只期望 Objective-C 类型的可变参数集合初始化方法。                                                                                      | NO         |
+| clang-analyzer-osx.coreFoundation.CFError                                     | 检查 CFErrorRef\* 参数的使用情况。                                                                                                                                        | NO         |
+| clang-analyzer-osx.coreFoundation.CFNumber                                    | 检查 CFNumber API 的正确使用。                                                                                                                                            | NO         |
+| clang-analyzer-osx.coreFoundation.CFRetainRelease                             | 检查 CFRetain/CFRelease/CFMakeCollectable 函数中是否存在空指针参数。                                                                                                      | NO         |
+| clang-analyzer-osx.coreFoundation.containers.OutOfBounds                      | 检查在使用 'CFArray' API 时是否存在数组越界访问。                                                                                                                         | NO         |
+| clang-analyzer-osx.coreFoundation.containers.PointerSizedValues               | 当使用非指针大小的值创建 CFArray、CFDictionary 或 CFSet 时会发出警告。                                                                                                    | NO         |
+| clang-analyzer-osx.NumberObjectConversion                                     | 检查将表示数字的对象错误地转换为数字的情况。                                                                                                                              | NO         |
+| clang-analyzer-osx.ObjCProperty                                               | 检查 Objective-C 属性的正确使用。                                                                                                                                         | NO         |
+| clang-analyzer-osx.SecKeychainAPI                                             | 检查 Secure Keychain API 的正确使用。                                                                                                                                     | NO         |
+| clang-analyzer-security.cert.env.InvalidPtr                                   | 检测可能已失效的指针的使用。                                                                                                                                              | YES        |
+| clang-analyzer-security.FloatLoopCounter                                      | 警告使用浮点数作为循环计数器（CERT: FLP30-C，FLP30-CPP）。                                                                                                                | YES        |
+| clang-analyzer-security.insecureAPI.bcmp                                      | 警告使用 'bcmp' 函数。                                                                                                                                                    | YES        |
+| clang-analyzer-security.insecureAPI.bcopy                                     | 警告使用 'bcopy' 函数。                                                                                                                                                   | YES        |
+| clang-analyzer-security.insecureAPI.bzero                                     | 警告使用 'bzero' 函数的情况。                                                                                                                                             | YES        |
+| clang-analyzer-security.insecureAPI.decodeValueOfObjCType                     | 警告使用 '-decodeValueOfObjCType:at:' 方法的情况。                                                                                                                        | YES        |
+| clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling          | 警告使用不安全或已弃用的缓冲区操作函数。                                                                                                                                  | YES        |
+| clang-analyzer-security.insecureAPI.getpw                                     | 警告使用 getpw 函数的情况。                                                                                                                                               | YES        |
+| clang-analyzer-security.insecureAPI.gets                                      | 警告使用 'gets' 函数的情况。                                                                                                                                              | YES        |
+| clang-analyzer-security.insecureAPI.mkstemp                                   | 当在格式字符串中传递少于 6 个 X 给'mkstemp'时发出警告。                                                                                                                   | YES        |
+| clang-analyzer-security.insecureAPI.mktemp                                    | 警告使用不安全的 mktemp 函数。                                                                                                                                            | YES        |
+| clang-analyzer-security.insecureAPI.rand                                      | 警告使用 'rand'、'random' 及相关函数的行为。                                                                                                                              | YES        |
+| clang-analyzer-security.insecureAPI.strcpy                                    | 警告使用 'strcpy' 和 'strcat' 函数。                                                                                                                                      | YES        |
+| clang-analyzer-security.insecureAPI.UncheckedReturn                           | 警告必须始终检查返回值的函数被调用但其返回值未被检查的情况。                                                                                                              | YES        |
+| clang-analyzer-security.insecureAPI.vfork                                     | 警告使用 'vfork' 函数的情况。                                                                                                                                             | YES        |
+| clang-analyzer-security.PutenvStackArray                                      | 该检查器发现将指向栈分配数组的指针作为参数传递给 putenv 函数的调用，这可能导致数据在函数退出后被覆盖的问题。                                                              | YES        |
+| clang-analyzer-security.SetgidSetuidOrder                                     | 该检查器用于检测 setuid(getuid()) 和 setgid(getgid()) 顺序调用中间是否缺少其他权限变更函数，可能导致权限恢复不完整的安全问题。                                            | YES        |
+| clang-analyzer-unix.API                                                       | 检查对各种 UNIX/Posix 函数的调用。                                                                                                                                        | NO         |
+| clang-analyzer-unix.BlockInCriticalSection                                    | 检查在临界区内调用阻塞函数的情况。                                                                                                                                        | YES        |
+| clang-analyzer-unix.cstring.BadSizeArg                                        | 检查传递给 C 字符串函数的大小参数是否存在常见错误模式。                                                                                                                   | YES        |
+| clang-analyzer-unix.cstring.NullArg                                           | 检查是否有空指针被作为参数传递给 C 字符串函数。                                                                                                                           | YES        |
+| clang-analyzer-unix.Errno                                                     | 检查对 'errno' 的不当使用。                                                                                                                                               | YES        |
+| clang-analyzer-unix.Malloc                                                    | 检查内存泄漏、重复释放和释放后使用等问题，追踪由 malloc()/free() 管理的内存。                                                                                             | YES        |
+| clang-analyzer-unix.MallocSizeof                                              | 检查涉及 sizeof 的可疑 malloc 参数。                                                                                                                                      | YES        |
+| clang-analyzer-unix.MismatchedDeallocator                                     | 检查是否存在不匹配的内存释放操作。                                                                                                                                        | YES        |
+| clang-analyzer-unix.StdCLibraryFunctions                                      | 检查 C 标准库函数的无效参数，并应用参数与返回值之间的关系。                                                                                                               | YES        |
+| clang-analyzer-unix.Stream                                                    | 检查流处理函数。                                                                                                                                                          | YES        |
+| clang-analyzer-unix.Vfork                                                     | 检查 vfork 的正确使用。                                                                                                                                                   | NO         |
+| clang-analyzer-webkit.NoUncountedMemberChecker                                | 检查是否存在未计数的成员变量。                                                                                                                                            | NO         |
+| clang-analyzer-webkit.RefCntblBaseVirtualDtor                                 | 检查是否有引用计数基类具有虚析构函数。                                                                                                                                    | YES        |
+| clang-analyzer-webkit.UncountedLambdaCapturesChecker                          | 检查未计数的 lambda 捕获。                                                                                                                                                | YES        |
+| concurrency-mt-unsafe                                                         | 检查已知线程不安全的函数，防止在多线程环境中因访问全局状态或使用信号而引发竞态条件。                                                                                      | YES        |
+| concurrency-thread-canceltype-asynchronous                                    | 该检查会查找将线程取消类型设置为异步的 pthread_setcanceltype 函数调用，因为异步取消通常不安全，应使用默认的延迟取消类型。                                                 | YES        |
+| cppcoreguidelines-avoid-c-arrays                                              | 避免使用 C 风格数组，推荐使用更安全的现代容器如 std::array 或 std::vector。                                                                                               | NO         |
+| cppcoreguidelines-avoid-capturing-lambda-coroutines                           | 该检查用于标记具有非空捕获列表的 C++20 协程 lambda 表达式，以防止在协程恢复时访问已释放内存的问题。                                                                       | YES        |
+| cppcoreguidelines-avoid-const-or-ref-data-members                             | 该检查会在结构体或类具有 const 限定或引用类型成员时发出警告，因为这会导致类只能被拷贝构造而不能被拷贝赋值。                                                               | YES        |
+| cppcoreguidelines-avoid-do-while                                              | 警告使用 do-while 循环，因为其终止条件在末尾，首次迭代前不会检查条件，可能导致难以察觉的错误。                                                                            | YES        |
+| cppcoreguidelines-avoid-goto                                                  | 该检查旨在避免使用容易出错的 goto 控制流语句，建议用循环结构替代。                                                                                                        | YES        |
+| cppcoreguidelines-avoid-magic-numbers                                         | 避免在代码中使用魔法数字（未命名的常量），以提高可读性和可维护性。                                                                                                        | YES        |
+| cppcoreguidelines-avoid-non-const-global-variables                            | 该检查器用于查找非 const 的全局变量，以避免全局可变状态带来的问题。                                                                                                       | YES        |
+| cppcoreguidelines-avoid-reference-coroutine-parameters                        | 该检查会在协程接受引用参数时发出警告，因为在挂起点之后引用可能悬空并且不再有效。                                                                                          | YES        |
+| cppcoreguidelines-c-copy-assignment-signature                                 | 该检查是一个别名，请参阅 misc-unconventional-assign-operator 以获取更多信息。                                                                                             | YES        |
+| cppcoreguidelines-explicit-virtual-functions                                  | 该检查是一个别名，请参阅 modernize-use-override 以获取更多信息。                                                                                                          | YES        |
+| cppcoreguidelines-init-variables                                              | 检查是否存在未初始化的局部变量，以避免在赋值前读取它们可能导致的意外行为。                                                                                                | YES        |
+| cppcoreguidelines-interfaces-global-init                                      | 该检查会标记那些在全局变量初始化时访问外部对象的情况，从而可能导致初始化顺序问题。                                                                                        | YES        |
+| cppcoreguidelines-macro-to-enum                                               | 将宏替换为作用域枚举以提高类型安全性和可读性。                                                                                                                            | YES        |
+| cppcoreguidelines-macro-usage                                                 | 该检查用于发现使用宏实现常量或函数等功能的代码，并建议使用更合适的语言结构替代宏。                                                                                        | YES        |
+| cppcoreguidelines-misleading-capture-default-by-value                         | 当 lambda 使用按值捕获默认方式并捕获 this 指针时，可能会误导用户认为类成员是按值捕获的，而实际上是通过 this 指针按引用访问的。                                            | YES        |
+| cppcoreguidelines-missing-std-forward                                         | 当转发引用参数在函数体内未被正确使用 std::forward 转发时发出警告。                                                                                                        | YES        |
+| cppcoreguidelines-narrowing-conversions                                       | 避免有损的缩窄和截断算术转换。                                                                                                                                            | YES        |
+| cppcoreguidelines-no-malloc                                                   | 该检查用于检测 C 风格的内存管理函数（如 malloc、realloc、calloc 和 free）的使用，并建议使用合适的 RAII 对象替代。                                                         | NO         |
+| cppcoreguidelines-no-suspend-with-lock                                        | 该检查用于发现协程在持有锁的情况下挂起的情况，以避免长时间持锁和死锁风险。                                                                                                | YES        |
+| cppcoreguidelines-noexcept-destructor                                         | 析构函数应声明为 noexcept，以避免异常传播带来的潜在问题。                                                                                                                 | YES        |
+| cppcoreguidelines-noexcept-move-operations                                    | 确保移动操作被声明为 noexcept，以提高性能和异常安全性。                                                                                                                   | YES        |
+| cppcoreguidelines-noexcept-swap                                               | 该检查确保为值类型提供不会抛出异常的 swap 函数以提高性能和安全性。                                                                                                        | YES        |
+| cppcoreguidelines-non-private-member-variables-in-classes                     | 禁止在类中使用非私有成员变量，以鼓励封装和良好的面向对象设计。                                                                                                            | YES        |
+| cppcoreguidelines-owning-memory                                               | 该检查通过类型注解 gsl::owner<T\*> 实现对原始指针资源所有权的静态分析，提升资源管理的安全性。                                                                             | YES        |
+| cppcoreguidelines-prefer-member-initializer                                   | 该检查器发现可以从构造函数体中的成员赋值转换为构造函数初始化列表的情况，从而提升代码可读性和性能。                                                                        | YES        |
+| cppcoreguidelines-pro-bounds-array-to-pointer-decay                           | 该检查会标记所有数组到指针的退化操作。                                                                                                                                    | YES        |
+| cppcoreguidelines-pro-bounds-constant-array-index                             | 该检查会标记所有对静态数组和 std::array 的下标访问中，索引不是常量整数表达式或越界的情况。                                                                                | YES        |
+| cppcoreguidelines-pro-bounds-pointer-arithmetic                               | 该检查会标记所有指针运算的使用，因为这可能导致无效指针。                                                                                                                  | NO         |
+| cppcoreguidelines-pro-type-const-cast                                         | 限制在 C++ 代码中使用 const_cast，以防止移除 const 或 volatile 限定符导致未定义行为。                                                                                     | YES        |
+| cppcoreguidelines-pro-type-cstyle-cast                                        | 该检查会标记所有执行 static_cast 向下转换、const_cast 或 reinterpret_cast 的 C 风格类型转换的使用。                                                                       | YES        |
+| cppcoreguidelines-pro-type-member-init                                        | 该检查器会标记那些未对所有成员变量进行初始化、可能导致未定义状态的构造函数定义。                                                                                          | YES        |
+| cppcoreguidelines-pro-type-reinterpret-cast                                   | 该检查会标记 C++ 代码中所有使用 reinterpret_cast 的情况，以避免违反类型安全。                                                                                             | NO         |
+| cppcoreguidelines-pro-type-static-cast-downcast                               | 该检查会标记所有将基类转换为派生类的 static_cast 用法，并建议改为使用 dynamic_cast，以提高类型安全性。                                                                    | YES        |
+| cppcoreguidelines-pro-type-union-access                                       | 该检查会标记所有对 union 成员的访问操作。                                                                                                                                 | NO         |
+| cppcoreguidelines-pro-type-vararg                                             | 该检查会标记所有对 C 风格可变参数函数的调用以及对 va_arg 的使用。                                                                                                         | YES        |
+| cppcoreguidelines-rvalue-reference-param-not-moved                            | 当函数的右值引用参数在函数体中未被 std::move 移动时会发出警告，以避免潜在的程序错误和困惑。                                                                               | YES        |
+| cppcoreguidelines-slicing                                                     | 该检查用于发现将派生类对象拷贝到基类对象中导致的对象切片问题。                                                                                                            | YES        |
+| cppcoreguidelines-special-member-functions                                    | 该检查用于发现仅定义了部分特殊成员函数的类，以避免不一致的默认行为。                                                                                                      | YES        |
+| cppcoreguidelines-use-default-member-init                                     | 建议为类的数据成员使用默认成员初始化，以提高代码的安全性和可读性。                                                                                                        | YES        |
+| cppcoreguidelines-use-enum-class                                              | 建议将未限定作用域的 enum 声明替换为 enum class，以提高类型安全性。                                                                                                       | YES        |
+| cppcoreguidelines-virtual-class-destructor                                    | 该检查用于发现具有虚函数的类中析构函数未被正确声明为 public 且 virtual 或 protected 且非 virtual 的情况，以防止未定义行为。                                               | YES        |
+| darwin-avoid-spinlock                                                         | 该检查用于查找已弃用的 `OSSpinlock` 的使用，因为它可能导致活锁问题。                                                                                                      | NO         |
+| darwin-dispatch-once-nonstatic                                                | 该检查器用于查找未使用静态或全局存储的 dispatch_once_t 变量声明，因为这种用法在 libdispatch 中行为未定义，应当避免。                                                      | NO         |
+| fuchsia-default-arguments-calls                                               | 警告在函数或方法调用中使用了默认参数。                                                                                                                                    | NO         |
+| fuchsia-default-arguments-declarations                                        | 警告函数或方法在声明时使用了默认参数。                                                                                                                                    | NO         |
+| fuchsia-header-anon-namespaces                                                | 该检查是一个别名，请参阅 `google-build-namespace` 了解更多信息。                                                                                                          | NO         |
+| fuchsia-multiple-inheritance                                                  | 禁止类从多个非纯虚基类继承，以避免多重继承带来的复杂性和潜在问题。                                                                                                        | NO         |
+| fuchsia-overloaded-operator                                                   | 禁止除赋值运算符（拷贝和移动）之外的运算符重载。                                                                                                                          | NO         |
+| fuchsia-statically-constructed-objects                                        | 警告使用静态存储的全局非平凡对象在运行时构造，除非其构造函数为 constexpr 或无显式构造函数。                                                                               | NO         |
+| fuchsia-trailing-return                                                       | 禁止使用尾置返回类型（trailing return），除非用于 lambda 表达式或使用 decltype 的情况。                                                                                   | NO         |
+| fuchsia-virtual-inheritance                                                   | 警告是否使用了虚继承定义类。                                                                                                                                              | NO         |
+| google-build-explicit-make-pair                                               | 该检查确保 make_pair 的模板参数是由编译器自动推导的，而不是显式指定。                                                                                                     | YES        |
+| google-build-namespaces                                                       | 在头文件中查找匿名命名空间。                                                                                                                                              | YES        |
+| google-build-using-namespace                                                  | 禁止使用 using namespace 指令以避免污染命名空间。                                                                                                                         | YES        |
+| google-default-arguments                                                      | 禁止为虚函数提供默认参数。                                                                                                                                                | YES        |
+| google-explicit-constructor                                                   | 该检查确保可由单个参数调用的构造函数和转换运算符被标记为 explicit，以避免意外的隐式转换。                                                                                 | YES        |
+| google-global-names-in-headers                                                | 标记头文件中污染全局命名空间的情况，目前仅对 `using` 声明和指令触发。                                                                                                     | YES        |
+| google-objc-avoid-nsobject-new                                                | 该检查用于查找对 +new 方法的调用或重写，这是 Google Objective-C 风格指南所禁止的。                                                                                        | NO         |
+| google-objc-avoid-throwing-exception                                          | 我们倾向于在 Objective-C 代码中避免抛出异常，而是通过传入 NSError \*\* 并返回 BOOL 来指示成功或失败。                                                                     | NO         |
+| google-objc-function-naming                                                   | 该检查器用于查找 Objective-C 文件中不符合 Google Objective-C 编码规范的函数命名方式。                                                                                     | NO         |
+| google-objc-global-variable-declaration                                       | 该检查用于查找不符合 Google Objective-C 编码规范中变量命名模式的全局变量声明。                                                                                            | NO         |
+| google-readability-avoid-underscore-in-googletest-name                        | 该检查用于检测 googletest 测试套件名和测试名中是否包含不被允许的下划线。                                                                                                  | YES        |
+| google-readability-braces-around-statements                                   | 强制在控制语句（如 if、for、while 等）中使用大括号以提高代码可读性和减少错误。                                                                                            | YES        |
+| google-readability-casting                                                    | 该检查用于查找 C 风格类型转换的用法。                                                                                                                                     | YES        |
+| google-readability-function-size                                              | 限制函数体的长度以提高代码可读性。                                                                                                                                        | YES        |
+| google-readability-namespace-comments                                         | 在命名空间结束处添加注释以提高代码可读性。                                                                                                                                | YES        |
+| google-readability-todo                                                       | 查找没有用户名或缺少 bug 编号的 TODO 注释。                                                                                                                               | YES        |
+| google-runtime-int                                                            | 建议将 short、long 和 long long 替换为 u?intXX(\_t)? 类型以提高代码的可移植性和一致性。                                                                                   | YES        |
+| google-runtime-operator                                                       | 查找对一元 `operator &` 的重载。                                                                                                                                          | YES        |
+| google-upgrade-googletest-case                                                | 该检查用于将已弃用的 Google Test 1.9 中包含 "case" 的 API 名称替换为包含 "suite" 的等效 API，以符合国际测试标准中的术语使用。                                             | YES        |
+| hicpp-avoid-c-arrays                                                          | 该检查旨在避免使用 C 风格数组，鼓励使用更安全的现代 C++ 容器。                                                                                                            | NO         |
+| hicpp-avoid-goto                                                              | 避免使用 goto 语句以提高代码的可读性和可维护性。                                                                                                                          | YES        |
+| hicpp-braces-around-statements                                                | 强制在语句周围添加大括号以提高代码可读性和减少错误。                                                                                                                      | YES        |
+| hicpp-deprecated-headers                                                      | 该检查用于替换已弃用的 C 标准库头文件以使用等效的 C++ 标准头文件。                                                                                                        | YES        |
+| hicpp-exception-baseclass                                                     | 确保所有在 throw 表达式中抛出的值都是 std::exception 的实例。                                                                                                             | YES        |
+| hicpp-explicit-conversions                                                    | 该检查用于强制要求构造函数和转换运算符使用 explicit 关键字以避免隐式转换。                                                                                                | YES        |
+| hicpp-function-size                                                           | 该检查用于限制函数体的大小，以控制函数的复杂度。                                                                                                                          | YES        |
+| hicpp-ignored-remove-result                                                   | 确保未忽略 `std::remove`、`std::remove_if` 和 `std::unique` 的返回值，以避免逻辑错误。                                                                                    | YES        |
+| hicpp-invalid-access-moved                                                    | 检测是否访问了已被移动的对象。                                                                                                                                            | YES        |
+| hicpp-member-init                                                             | 该检查用于按照正确顺序初始化类成员。                                                                                                                                      | YES        |
+| hicpp-move-const-arg                                                          | 该检查用于检测将 const 对象作为 std::move 参数传递的无效用法。                                                                                                            | YES        |
+| hicpp-multiway-paths-covered                                                  | 该检查用于发现代码路径未被完全覆盖的情况，并建议在更清晰的情况下使用 if 语句代替 switch 语句。                                                                            | YES        |
+| hicpp-named-parameter                                                         | 为函数调用中的参数提供命名注释，以提高代码可读性。                                                                                                                        | YES        |
+| hicpp-new-delete-operators                                                    | 确保 new 和 delete 操作符具有正确的签名。                                                                                                                                 | YES        |
+| hicpp-no-array-decay                                                          | 防止数组在传递给函数时隐式转换为指针，避免潜在的边界错误。                                                                                                                | YES        |
+| hicpp-no-assembler                                                            | 避免使用内联汇编，因为它会限制代码的可移植性。                                                                                                                            | YES        |
+| hicpp-no-malloc                                                               | 禁止使用 malloc/free 等低级内存管理函数，鼓励使用更安全的内存管理方式。                                                                                                   | YES        |
+| hicpp-noexcept-move                                                           | 标记移动赋值和移动构造函数为 noexcept，以提高性能并符合高完整性 C++ 编码标准。                                                                                            | YES        |
+| hicpp-signed-bitwise                                                          | 该检查器用于发现对有符号整数类型进行位运算的用法，这可能导致未定义或实现定义的行为。                                                                                      | YES        |
+| hicpp-special-member-functions                                                | 检查特殊成员函数是否具有正确的签名。                                                                                                                                      | YES        |
+| hicpp-static-assert                                                           | 该检查强制使用 static_assert 来提高代码的类型安全性和可读性。                                                                                                             | YES        |
+| hicpp-undelegated-constructor                                                 | 该检查用于发现构造函数内部错误地调用了其他构造函数而未使用委托构造的情况。                                                                                                | YES        |
+| hicpp-uppercase-literal-suffix                                                | 确保字面量后缀使用大写形式以提高代码可读性。                                                                                                                              | YES        |
+| hicpp-use-auto                                                                | 该检查强制使用 auto 关键字以简化变量声明并提高代码可读性。                                                                                                                | NO         |
+| hicpp-use-emplace                                                             | 该检查用于替换使用 push_back 或 insert 的地方为 emplace_back 或 emplace，以提高性能并避免不必要的对象拷贝。                                                               | YES        |
+| hicpp-use-equals-default                                                      | 显式默认特殊成员函数以提高代码可读性和一致性。                                                                                                                            | YES        |
+| hicpp-use-equals-delete                                                       | 显式地默认或删除特殊成员函数以提高代码的可读性和安全性。                                                                                                                  | YES        |
+| hicpp-use-noexcept                                                            | 强制使用 noexcept 以符合高完整性 C++ 编码标准的规则 1.3.5。                                                                                                               | YES        |
+| hicpp-use-nullptr                                                             | 将使用 0 或 NULL 的地方替换为 C++11 引入的 nullptr，以提高类型安全性。                                                                                                    | YES        |
+| hicpp-use-override                                                            | 当重写虚函数时，使用 override 关键字进行声明。                                                                                                                            | YES        |
+| hicpp-vararg                                                                  | 禁止使用可变参数函数（如 printf），以提高类型安全性和可维护性。                                                                                                           | YES        |
+| linuxkernel-must-check-errs                                                   | 检查 Linux 内核代码是否正确使用了来自 linux/err.h 的错误处理函数返回值。                                                                                                  | YES        |
+| Clang-Tidy Checks                                                             | 该 check 的中文介绍作用为：避免使用可能导致未定义行为的危险函数。                                                                                                         | YES        |
+| llvm-else-after-return                                                        | 避免在 return 语句后使用 else，从而提高代码可读性。                                                                                                                       | YES        |
+| llvm-header-guard                                                             | 查找并修复不符合 LLVM 风格的头文件保护宏。                                                                                                                                | YES        |
+| llvm-include-order                                                            | 检查 `#include` 语句的正确顺序。                                                                                                                                          | YES        |
+| llvm-namespace-comment                                                        | 检查长命名空间是否具有结束注释。                                                                                                                                          | YES        |
+| llvm-prefer-isa-or-dyn-cast-in-conditionals                                   | 该检查器查找条件语句中不安全或冗余的类型转换用法，并建议使用更安全的 isa<> 或 dyn_cast<> 替代 cast<>。                                                                    | YES        |
+| llvm-prefer-register-over-unsigned                                            | 将用于保存虚拟寄存器和物理寄存器的 unsigned 类型变量替换为 Register 类型。                                                                                                | YES        |
+| llvm-qualified-auto                                                           | 自动类型推导时要求使用限定符以提高代码可读性和一致性。                                                                                                                    | YES        |
+| llvm-twine-local                                                              | 查找容易在释放后被使用、应避免使用的局部 Twine 变量。                                                                                                                     | NO         |
+| llvmlibc-callee-namespace                                                     | 检查所有函数调用是否解析到正确的命名空间中。                                                                                                                              | NO         |
+| llvmlibc-implementation-in-namespace                                          | 该检查确保 llvm-libc 实现中的所有声明都位于正确的命名空间中。                                                                                                             | NO         |
+| llvmlibc-inline-function-decl                                                 | 检查头文件中所有隐式和显式内联函数是否使用了 `LIBC_INLINE` 宏标记，类中的隐式函数或被删除的函数除外。                                                                     | NO         |
+| llvmlibc-restrict-system-libc-headers                                         | 该检查用于查找在 llvm-libc 实现中错误地包含了非编译器提供的系统 libc 头文件，以避免因 ABI 不兼容而导致的运行时问题。                                                      | NO         |
+| misc-confusable-identifiers                                                   | 警告容易混淆的标识符，即在视觉上相似但使用不同 Unicode 字符的标识符，以防止潜在的安全攻击。                                                                               | YES        |
+| misc-const-correctness                                                        | 该检查用于检测可以声明为 const 但未声明的局部变量，以提高代码的常量正确性。                                                                                               | YES        |
+| misc-coroutine-hostile-raii                                                   | 检测在协程中某些具有线程敏感析构要求的 RAII 类型对象在 suspend 点之间持续存在的情况，以防止潜在的未定义行为。                                                             | NO         |
+| misc-definitions-in-headers                                                   | 该检查器用于查找头文件中非 extern 且非 inline 的函数和变量定义，以避免在多个翻译单元中包含同一头文件时可能导致的 ODR（One Definition Rule）违规问题。                     | YES        |
+| misc-header-include-cycle                                                     | 该检查用于检测用户自定义头文件之间的循环依赖关系（include cycle）。                                                                                                       | YES        |
+| misc-include-cleaner                                                          | 检查未使用和缺失的头文件，仅对翻译单元的主文件生成诊断信息。                                                                                                              | YES        |
+| misc-misleading-bidirectional                                                 | 警告未终止的双向 Unicode 序列，以检测类似“特洛伊源”攻击的潜在安全风险。                                                                                                   | YES        |
+| misc-misleading-identifier                                                    | 检测包含具有从右到左书写方向的 Unicode 字符的标识符，这些字符可能导致代码含义被误解。                                                                                     | YES        |
+| misc-misplaced-const                                                          | 该检查诊断了当 const 限定符应用于指向类型的 typedef/using 而不是被指对象时可能引起误解的情况。                                                                            | YES        |
+| misc-new-delete-overloads                                                     | 该检查会标记那些重载了 operator new() 但未在同一作用域中定义对应的 operator delete() 的函数。                                                                             | YES        |
+| misc-no-recursion                                                             | 检测函数之间的递归调用（包括直接和间接递归），以避免形成调用图中的循环。                                                                                                  | YES        |
+| misc-non-copyable-objects                                                     | 该检查会标记那些不应按值传递的对象（如 C 的 FILE 对象或 POSIX 的 pthread_mutex_t 对象）的解引用和非指针声明。                                                             | YES        |
+| misc-non-private-member-variables-in-classes                                  | 该检查器会诊断那些包含非静态成员函数的类中，所有非 public 的非静态数据成员，建议将其声明为 private 并通过成员函数访问。                                                   | YES        |
+| misc-redundant-expression                                                     | 检测由于复制粘贴错误导致的冗余表达式，这些表达式通常是恒为真、恒为假或恒定值。                                                                                            | YES        |
+| misc-static-assert                                                            | 将可在编译期求值的 assert() 替换为 static_assert()，以提高安全性和效率。                                                                                                  | YES        |
+| misc-throw-by-value-catch-by-reference                                        | 检测是否违反了“按值抛出、按引用捕获”的异常处理规则，以避免对象切片和性能问题。                                                                                            | YES        |
+| misc-unconventional-assign-operator                                           | 检查赋值运算符的返回类型和参数类型是否符合规范，并确保返回语句正确返回 \*this。                                                                                           | YES        |
+| misc-uniqueptr-reset-release                                                  | 将 unique_ptr::reset(release()) 替换为更简洁安全的 std::move() 赋值方式。                                                                                                 | YES        |
+| misc-unused-alias-decls                                                       | 查找未使用的命名空间别名声明。                                                                                                                                            | YES        |
+| misc-unused-parameters                                                        | 该检查用于查找未使用的函数参数，可能揭示代码中的错误并建议注释或移除这些参数。                                                                                            | YES        |
+| misc-unused-using-decls                                                       | 查找未使用的 using 声明。                                                                                                                                                 | YES        |
+| misc-use-anonymous-namespace                                                  | 将可以使用匿名命名空间的全局作用域 static 函数或变量替换为匿名命名空间，以提高代码清晰度并避免 static 的多义性。                                                          | YES        |
+| misc-use-internal-linkage                                                     | 检测可以标记为 static 或移动到匿名命名空间以实现内部链接的变量和函数。                                                                                                    | YES        |
+| modernize-avoid-bind                                                          | 该检查器发现并将 std::bind 和 boost::bind 替换为更易读且更高效的 lambda 表达式。                                                                                          | YES        |
+| modernize-avoid-c-arrays                                                      | 该检查器用于查找 C 风格数组类型，并建议使用 std::array 或 std::vector 进行替代。                                                                                          | NO         |
+| modernize-concat-nested-namespaces                                            | 该检查器用于将传统的嵌套命名空间语法转换为 C++17 引入的更简洁的命名空间合并语法。                                                                                         | NO         |
+| modernize-deprecated-headers                                                  | 该检查将 C 标准库头文件替换为其 C++ 替代品，并移除冗余头文件。                                                                                                            | NO         |
+| modernize-deprecated-ios-base-aliases                                         | 检测并替换使用了已弃用的 std::ios_base 成员类型为其非弃用的等效类型。                                                                                                     | NO         |
+| modernize-loop-convert                                                        | 该检查将传统的 for 循环转换为 C++11 的基于范围的 for 循环，以提高代码的可读性和安全性。                                                                                   | NO         |
+| modernize-macro-to-enum                                                       | 将一组相邻的宏替换为未命名的无作用域枚举，以提高类型安全性和可读性。                                                                                                      | YES        |
+| modernize-make-shared                                                         | 该检查会将通过显式调用构造函数和 new 表达式创建 std::shared_ptr 的方式替换为使用 std::make_shared。                                                                       | YES        |
+| modernize-make-unique                                                         | 该检查将通过显式调用构造函数和 new 表达式创建 std::unique_ptr 的方式替换为使用 C++14 引入的 std::make_unique。                                                            | NO         |
+| modernize-min-max-use-initializer-list                                        | 将嵌套的 std::min 和 std::max 调用替换为使用初始化列表的形式以提高代码可读性。                                                                                            | YES        |
+| modernize-pass-by-value                                                       | 将构造函数中被复制到类成员的 const 引用参数替换为按值传递，并使用 std::move() 移动以避免不必要的复制操作。                                                                | YES        |
+| modernize-raw-string-literal                                                  | 将包含转义字符的字符串字面量有选择地替换为原始字符串字面量，以提高可读性和可维护性。                                                                                      | YES        |
+| modernize-redundant-void-arg                                                  | 移除冗余的 void 参数列表以简化函数声明。                                                                                                                                  | YES        |
+| modernize-replace-auto-ptr                                                    | 该检查将已弃用的 std::auto_ptr 替换为 C++11 引入的 std::unique_ptr，以实现更安全的所有权转移。                                                                            | YES        |
+| modernize-replace-disallow-copy-and-assign-macro                              | 将使用 DISALLOW_COPY_AND_ASSIGN(Type) 宏禁用拷贝构造和赋值操作的方式替换为 C++11 的 delete 语法。                                                                         | YES        |
+| modernize-replace-random-shuffle                                              | 该检查会查找 std::random_shuffle 的使用并将其替换为 std::shuffle，以适应 C++17 中的标准变更。                                                                             | YES        |
+| modernize-return-braced-init-list                                             | 用花括号初始化列表替换返回语句中对构造函数的显式调用，以避免在函数定义和返回语句中重复返回类型。                                                                          | YES        |
+| modernize-shrink-to-fit                                                       | 用 `shrink_to_fit()` 方法替代通过复制和交换技巧来减少可缩容器容量的做法，以提高代码可读性和效率。                                                                         | NO         |
+| modernize-type-traits                                                         | 将标准库类型萃取用法从 traits<...>::type 和 traits<...>::value 转换为更现代的 traits_t<...> 和 traits_v<...> 形式。                                                       | YES        |
+| modernize-unary-static-assert                                                 | 该检查会诊断带有空字符串字面量的 static_assert 声明，并建议将其替换为单参数形式的 static_assert。                                                                         | YES        |
+| modernize-use-auto                                                            | 该检查通过在变量声明中使用 auto 类型说明符来提高代码的可读性和可维护性。                                                                                                  | NO         |
+| modernize-use-bool-literals                                                   | 将被转换为 bool 的整数字面量替换为布尔字面量 true 或 false。                                                                                                              | YES        |
+| modernize-use-constraints                                                     | 该检查用于将使用 std::enable_if 的模板约束替换为更现代的 C++20 requires 子句，以提高代码的可读性和可维护性。                                                              | NO         |
+| modernize-use-default-member-init                                             | 该检查将构造函数中的成员初始化器转换为 C++11 中的新默认成员初始化器，从而减少重复代码或允许使用 '= default'。                                                             | YES        |
+| modernize-use-default                                                         | 将此检查重命名为 `modernize-use-equals-default`。                                                                                                                         | YES        |
+| modernize-use-designated-initializers                                         | 通过使用具名初始化器语法，可以确保聚合类型的初始化更加安全和清晰，避免因字段顺序变化引入错误。                                                                            | YES        |
+| modernize-use-emplace                                                         | 该检查通过建议使用 emplace 系列方法替代显式构造临时对象后再调用 push_back/push/push_front 的方式，以生成更简洁且可能更高效的代码。                                        | YES        |
+| modernize-use-equals-default                                                  | 该检查将特殊成员函数的默认实现替换为 `= default;`，以提升编译器优化的可能性。                                                                                             | YES        |
+| modernize-use-equals-delete                                                   | 该检查识别未实现的私有特殊成员函数，并建议使用 = delete 来显式禁用它们。                                                                                                  | YES        |
+| modernize-use-integer-sign-comparison                                         | 将有符号与无符号整数之间的比较替换为 C++20 中安全的 `std::cmp_*` 替代方案。                                                                                               | NO         |
+| modernize-use-nodiscard                                                       | 该检查通过为成员函数添加 [[nodiscard]] 属性，提示哪些返回值在编译时不应被忽略。                                                                                           | YES        |
+| modernize-use-noexcept                                                        | 该检查将已弃用的动态异常规范替换为 C++11 引入的 noexcept 规范。                                                                                                           | YES        |
+| modernize-use-nullptr                                                         | 该检查将使用的空指针常量（如 NULL、0）转换为 C++11 和 C23 中引入的 nullptr 关键字。                                                                                       | YES        |
+| modernize-use-override                                                        | 该检查会为被重写的虚函数添加 C++11 引入的 override 关键字，并移除不再必要的 virtual 关键字，以提高代码的可读性和安全性。                                                  | YES        |
+| modernize-use-ranges                                                          | 检测可以用 ranges 版本替代的标准库迭代器算法调用。                                                                                                                        | NO         |
+| modernize-use-starts-ends-with                                                | 该检查器会识别使用绕远方式实现 starts_with 和 ends_with 的代码，并建议替换为更简洁的标准方法。                                                                            | NO         |
+| modernize-use-std-format                                                      | 将 absl::StrFormat 等格式化函数调用转换为 C++20 的 std::format，并相应修改格式字符串及移除不必要的 c_str()/data() 调用。                                                  | NO         |
+| modernize-use-std-numbers                                                     | 该检查器会将可替换为 C++20 中 std::numbers 头文件中数学常量的常量值和函数调用替换为对应的标准常量。                                                                       | NO         |
+| modernize-use-std-print                                                       | 将对 printf、fprintf、absl::PrintF 和 absl::FPrintF 的调用转换为 C++23 的 std::print 或 std::println 调用。                                                               | NO         |
+| modernize-use-trailing-return-type                                            | 将函数和 lambda 表达式的返回类型改写为 C++11 引入的尾置返回类型，以提升代码风格一致性。                                                                                   | NO         |
+| modernize-use-transparent-functors                                            | 优先使用透明函数对象以提高代码可读性、可维护性并减少错误。                                                                                                                | NO         |
+| modernize-use-uncaught-exceptions                                             | 该检查会警告对已在 C++17 中弃用的 std::uncaught_exception 的调用，并将其替换为 std::uncaught_exceptions。                                                                 | YES        |
+| modernize-use-using                                                           | 该检查将 typedef 的用法转换为 using 关键字以提高代码的现代性和可读性。                                                                                                    | YES        |
+| mpi-buffer-deref                                                              | 该检查用于验证传递给 MPI 函数的缓冲区是否被充分解引用，以避免因传递双重指针或多维数组而导致的潜在问题。                                                                   | NO         |
+| mpi-type-mismatch                                                             | 该检查用于验证用于 MPI 函数的缓冲区类型与 MPI 数据类型是否匹配。                                                                                                          | NO         |
+| objc-assert-equals                                                            | 查找对 XCTAssertEqual 和 XCTAssertNotEqual 的不当使用，并替换为 XCTAssertEqualObjects 或 XCTAssertNotEqualObjects，以避免因字符串指针相等性导致的测试脆弱性。             | NO         |
+| objc-avoid-nserror-init                                                       | 该检查用于查找不正确的 NSError 对象初始化方式，建议使用工厂方法 errorWithDomain:code:userInfo: 创建 NSError 对象。                                                        | NO         |
+| objc-dealloc-in-category                                                      | 检测 Objective-C 分类中实现的 -dealloc 方法，这可能会覆盖类中的实现并导致意外的释放行为。                                                                                 | NO         |
+| objc-forbidden-subclassing                                                    | 检测 Objective-C 类是否继承自不支持被继承的类。                                                                                                                           | NO         |
+| objc-missing-hash                                                             | 该检查器用于查找实现了 `-isEqual:` 方法但未适当实现 `-hash` 方法的 Objective-C 类。                                                                                       | NO         |
+| objc-nsdate-formatter                                                         | 该检查器会对使用 NSDateFormatter 时不推荐但合法的日期格式字符串发出警告，以避免日期格式解析错误。                                                                         | NO         |
+| objc-nsinvocation-argument-lifetime                                           | 该检查器用于查找在 ARC 下调用 NSInvocation 方法时未正确设置参数对象生命周期的问题。                                                                                       | NO         |
+| objc-property-declaration                                                     | 该检查用于查找 Objective-C 文件中不符合 Apple 编程指南中小驼峰命名规范的属性声明。                                                                                        | NO         |
+| objc-super-self                                                               | 在继承自 NSObject 的子类的初始化方法中，检测对 super 实例调用 -self 的情况，并建议改为调用父类的初始化方法。                                                              | NO         |
+| openmp-exception-escape                                                       | 检查 OpenMP 结构化代码块中是否有异常逃逸出其所在的代码块。                                                                                                                | NO         |
+| openmp-use-default-none                                                       | 建议在支持 default 子句的 OpenMP 指令中使用 default(none)，以强制显式指定变量的数据共享属性，从而提高代码可读性并减少错误。                                               | NO         |
+| performance-avoid-endl                                                        | 该检查器检测对 std::endl 的使用，并建议使用换行符 '                                                                                                                       | YES        |
+| performance-enum-size                                                         | 该检查通过分析枚举值的范围，推荐使用最小的基础整型类型以减少内存占用并提升性能。                                                                                          | YES        |
+| performance-faster-string-find                                                | 优化当传入的是单字符字符串字面量时对 std::string::find() 等函数的调用，使用字符字面量重载以提高效率。                                                                     | YES        |
+| performance-for-range-copy                                                    | 该检查用于发现范围-based for 循环中每次迭代都会复制代价较高的变量，而实际上可以通过 const 引用来避免不必要的复制。                                                        | YES        |
+| performance-implicit-cast-in-loop                                             | 该检查已更名为 performance-implicit-conversion-in-loop。                                                                                                                  | YES        |
+| performance-implicit-conversion-in-loop                                       | 该检查用于检测范围循环中因类型不匹配而发生的隐式转换，可能导致性能开销较大的深拷贝。                                                                                      | YES        |
+| performance-inefficient-algorithm                                             | 警告在关联容器上低效地使用 STL 算法。                                                                                                                                     | YES        |
+| performance-inefficient-string-concatenation                                  | 该检查用于发现使用 operator+ 进行字符串拼接所带来的性能开销，并建议使用更高效的 append() 或 operator+= 方法替代。                                                         | YES        |
+| performance-inefficient-vector-operation                                      | 该检查器用于发现可能导致不必要内存重新分配的 std::vector 操作（如 push_back、emplace_back）或 protobuf repeated field 添加操作，并建议在循环前调用 reserve() 以优化性能。 | YES        |
+| performance-move-const-arg                                                    | 该检查用于发现对常量、可平凡复制类型或传递给常量引用参数使用 std::move() 时无效的移动操作，并建议移除无效的 std::move()。                                                 | YES        |
+| performance-move-constructor-init                                             | 该检查会标记那些在构造函数初始化列表中通过拷贝构造函数而不是移动构造函数初始化成员或基类的用户自定义移动构造函数。                                                        | YES        |
+| performance-no-automatic-move                                                 | 该检查器用于发现由于 const 限定导致无法自动移动的局部变量，从而避免不必要的内存分配和拷贝操作。                                                                           | YES        |
+| performance-no-int-to-ptr                                                     | 诊断所有从整数到指针的类型转换，以避免隐藏指针来源信息对优化器造成影响。                                                                                                  | YES        |
+| performance-noexcept-destructor                                               | 标记析构函数为 noexcept 但实际表达式计算结果为 false（非字面量 false）的情况将被此检查标记。                                                                              | YES        |
+| performance-noexcept-move-constructor                                         | 该检查会标记未使用 noexcept 或使用 noexcept(expr) 且 expr 计算结果为 false（但不是 false 字面量）的用户自定义移动构造函数和赋值运算符。                                   | YES        |
+| performance-noexcept-swap                                                     | 该检查会标记未使用 noexcept 或使用 noexcept(expr) 但 expr 计算结果为 false 的用户自定义 swap 和 iter_swap 函数。                                                          | YES        |
+| performance-trivially-destructible                                            | 查找那些可以通过移除类外默认析构函数声明而变为可平凡析构的类型。                                                                                                          | YES        |
+| performance-type-promotion-in-math-fn                                         | 查找对 C 数学库函数调用中隐式将 float 类型提升为 double 类型的情况。                                                                                                      | YES        |
+| performance-unnecessary-copy-initialization                                   | 该检查用于发现那些通过非平凡拷贝构造函数初始化的局部变量声明，而实际上使用 const 引用即可满足需求，从而避免不必要的拷贝操作。                                             | YES        |
+| performance-unnecessary-value-param                                           | 将每次调用都会复制的高开销类型的值参数改为按 const 引用传递，以提高性能。                                                                                                 | YES        |
+| portability-avoid-pragma-once                                                 | 该检查器发现并建议用标准的 include guards（`#ifndef`/`#define`/`#endif`）替代非标准的 `#pragma once` 以提高可移植性。                                                     | YES        |
+| portability-restrict-system-includes                                          | 该检查用于选择性地允许或禁止一组可配置的系统头文件。                                                                                                                      | YES        |
+| portability-simd-intrinsics                                                   | 该检查器查找 SIMD 内建函数调用，并建议使用标准提案 P0214 中的 std::experimental::simd 替代以提高可移植性。                                                                | YES        |
+| portability-std-allocator-const                                               | 该检查用于报告使用 std::vector<const T>（以及类似包含 const 元素的容器）的情况，因为这在标准 C++ 中是不允许的，通常应使用 std::vector<T> 代替。                           | YES        |
+| portability-template-virtual-member-function                                  | 该检查器用于发现模板类中未实例化的虚函数在不同编译器之间可能导致的兼容性问题。                                                                                            | YES        |
+| readability-ambiguous-smartptr-reset-call                                     | 该检查用于发现当智能指针指向的对象也有 reset 方法时，调用 reset 可能导致意外将指针置空而非重置对象状态的问题。                                                            | YES        |
+| readability-avoid-const-params-in-decls                                       | 避免在函数声明中使用顶层 const 参数，因为它不会影响函数签名。                                                                                                             | YES        |
+| readability-avoid-nested-conditional-operator                                 | 该检查用于识别代码中嵌套的条件（三元）运算符，以提高代码可读性和可维护性。                                                                                                | YES        |
+| readability-avoid-return-with-void-value                                      | 该检查器用于发现返回类型为 void 的函数中带有返回值的 return 语句，以避免误导函数的意图。                                                                                  | YES        |
+| readability-avoid-unconditional-preprocessor-if                               | 该检查通过分析 `#if` 条件，查找总是启用或禁用的预处理器代码块，以避免死代码和始终启用的代码影响可读性和维护性。                                                           | YES        |
+| readability-braces-around-statements                                          | 该检查确保 if 语句和循环（for、do while 和 while）的主体被包含在大括号中。                                                                                                | YES        |
+| readability-const-return-type                                                 | 该检查器检测带有 const 限定符的函数返回类型，并建议移除 const 关键字，因为这种用法通常是多余的，并可能阻碍编译器优化。                                                    | YES        |
+| readability-container-contains                                                | 使用 contains 方法替代 count/find 更能清晰表达意图并提高效率。                                                                                                            | YES        |
+| readability-container-data-pointer                                            | 该检查用于发现可以使用 data() 而不是取容器第 0 个元素地址来获取底层数据指针的代码模式，以提高可读性并避免空容器时的错误内存访问。                                         | YES        |
+| readability-container-size-empty                                              | 应使用 empty() 方法而不是 size()/length() 方法来判断容器是否为空，以提高代码可读性并增强容器替换的灵活性。                                                                | YES        |
+| readability-convert-member-functions-to-static                                | 将未使用 this 指针的非静态成员函数转换为静态函数以提高代码可读性和性能。                                                                                                  | YES        |
+| readability-delete-null-pointer                                               | 删除空指针前进行存在性检查是多余的，因为删除空指针没有任何效果。                                                                                                          | YES        |
+| readability-duplicate-include                                                 | 查找并移除重复的头文件包含。                                                                                                                                              | YES        |
+| readability-else-after-return                                                 | 该检查有助于消除在控制流中断语句（如 return、break、continue、throw）之后使用 else 或 else if 的情况，从而提高代码可读性并减少缩进层级。                                  | YES        |
+| readability-enum-initial-value                                                | 该检查用于强制枚举值初始化风格一致，避免因隐式赋值导致的潜在错误。                                                                                                        | YES        |
+| readability-function-cognitive-complexity                                     | 该检查用于检测函数的认知复杂度指标，以帮助识别结构过于复杂、难以理解的函数。                                                                                              | YES        |
+| readability-function-size                                                     | 检查函数是否过大，并基于多种度量标准进行标记。                                                                                                                            | YES        |
+| readability-identifier-length                                                 | 该检查用于发现变量和函数参数名过短的问题，鼓励使用更具可读性的命名。                                                                                                      | YES        |
+| readability-identifier-naming                                                 | 该检查用于统一和规范代码中标识符的命名风格，以符合指定的命名规则和编码规范。                                                                                              | YES        |
+| readability-implicit-bool-cast                                                | 该检查已被重命名为 readability-implicit-bool-conversion。                                                                                                                 | YES        |
+| readability-implicit-bool-conversion                                          | 该检查用于发现内建类型与布尔类型之间的隐式转换，以提高代码可读性并发现潜在的隐藏错误。                                                                                    | YES        |
+| readability-inconsistent-declaration-parameter-name                           | 该检查用于发现函数声明与定义中参数名称不一致的情况，以保持代码一致性和可维护性。                                                                                          | YES        |
+| readability-isolate-declaration                                               | 将多个局部变量的声明拆分为单独的语句以提高代码可读性。                                                                                                                    | YES        |
+| readability-magic-numbers                                                     | 该检查用于检测代码中未通过常量或符号引入的魔法数字，以提升代码可读性和可维护性。                                                                                          | YES        |
+| readability-make-member-function-const                                        | 该检查器用于查找可以添加 const 限定符的非静态成员函数，以提高代码的可读性和遵循逻辑常量性原则。                                                                           | YES        |
+| readability-math-missing-parentheses                                          | 该检查用于查找在包含不同优先级运算符的数学表达式中缺失的括号，以明确运算顺序并减少歧义和错误。                                                                            | YES        |
+| readability-misleading-indentation                                            | 该检查通过识别缩进与代码语义不一致的情况，帮助发现潜在的逻辑错误并提升代码可读性。                                                                                        | YES        |
+| readability-misplaced-array-index                                             | 该检查器会警告不常见的数组下标语法，以提高代码可读性。                                                                                                                    | YES        |
+| readability-named-parameter                                                   | 查找函数中未命名的参数。                                                                                                                                                  | YES        |
+| readability-non-const-parameter                                               | 该检查器发现可以改为指向常量类型的指针类型函数参数，以使函数接口更安全。                                                                                                  | YES        |
+| readability-operators-representation                                          | 该检查用于统一 C++ 代码中二元、单元及重载运算符的传统符号表示与替代文字表示的风格。                                                                                       | YES        |
+| readability-qualified-auto                                                    | 该检查通过将推导为指针的 auto 类型变量显式标注为 auto\*，提高代码中指针类型的可读性。                                                                                     | YES        |
+| readability-redundant-access-specifiers                                       | 该检查器用于查找类、结构体和联合体中冗余的成员访问说明符。                                                                                                                | YES        |
+| readability-redundant-casting                                                 | 该检查通过消除不必要的类型转换操作来提高代码的可读性和可维护性。                                                                                                          | YES        |
+| readability-redundant-control-flow                                            | 该检查用于发现函数或循环体末尾冗余的 return 或 continue 语句，以提高代码可读性。                                                                                          | YES        |
+| readability-redundant-declaration                                             | 该检查用于查找冗余的变量和函数声明。                                                                                                                                      | YES        |
+| readability-redundant-function-ptr-dereference                                | 检测冗余的函数指针解引用操作。                                                                                                                                            | YES        |
+| readability-redundant-inline-specifier                                        | 检测函数和变量声明中冗余的 inline 说明符。                                                                                                                                | YES        |
+| readability-redundant-member-init                                             | 该检查器用于查找那些由于默认构造函数会被自动调用而显得多余的成员初始化。                                                                                                  | YES        |
+| readability-redundant-preprocessor                                            | 该检查用于发现可能冗余的预处理指令，例如嵌套在相同条件下的重复 #ifdef/#ifndef/#if 结构。                                                                                  | YES        |
+| readability-redundant-smartptr-get                                            | 该检查用于发现并移除对智能指针 .get() 方法的冗余调用。                                                                                                                    | YES        |
+| readability-redundant-string-cstr                                             | 该检查器用于查找对 std::string::c_str() 和 std::string::data() 的不必要调用。                                                                                             | YES        |
+| readability-redundant-string-init                                             | 该检查用于发现不必要的字符串初始化。                                                                                                                                      | YES        |
+| readability-reference-to-constructed-temporary                                | 该检查器用于检测使用引用变量延长刚构造的临时对象生命周期的 C++ 代码，以避免潜在的混淆和细微错误。                                                                         | YES        |
+| readability-simplify-boolean-expr                                             | 该检查通过简化涉及布尔常量的表达式和应用德摩根定律，提高布尔表达式的可读性和简洁性。                                                                                      | YES        |
+| readability-simplify-subscript-expr                                           | 该检查简化了下标表达式，例如将对 .data() 的调用和随后的数组下标操作合并为一次 operator[] 调用。                                                                           | YES        |
+| readability-static-accessed-through-instance                                  | 该检查器会将通过实例访问静态成员的表达式替换为使用合适的限定标识符，以提高代码可读性。                                                                                    | YES        |
+| readability-static-definition-in-anonymous-namespace                          | 在匿名命名空间中的 static 函数和变量定义是多余的，该检查会将其移除以提高代码可读性。                                                                                      | YES        |
+| readability-string-compare                                                    | 该检查用于发现使用 compare 方法进行字符串比较的情况，并建议使用更直观的等于或不等于运算符以避免误解和提高代码可读性。                                                     | YES        |
+| readability-suspicious-call-argument                                          | 该检查器用于发现函数调用中参数传递顺序可能错误的情况，通过比较实参名称与形参名称的相似度来判断是否存在混淆。                                                              | YES        |
+| readability-uniqueptr-delete-release                                          | 将 delete <unique_ptr>.release() 替换为 <unique_ptr> = nullptr，以简化代码并避免使用原始指针。                                                                            | YES        |
+| readability-uppercase-literal-suffix                                          | 检测整型或浮点型字面量使用了非大写的后缀，并提供将其替换为大写后缀的修复建议。                                                                                            | YES        |
+| readability-use-anyofallof                                                    | 该检查器发现可以用 std::any_of 或 std::all_of 替代的基于范围的 for 循环。                                                                                                 | YES        |
+| readability-use-std-min-max                                                   | 将某些条件语句替换为等效的 std::min 或 std::max 调用以提高代码可读性。                                                                                                    | YES        |
+| zircon-temporary-objects                                                      | 警告在 Zircon 内核中构造特定的临时对象，需显式指定要检测的类型名称。                                                                                                      | NO         |
